@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Export-Package: javax.servlet.jsp.jstl.tlv;uses:="javax.xml.parsers,ja
+ vax.servlet.jsp.tagext,org.xml.sax.helpers,org.xml.sax";version="1.2"
+ ,javax.servlet.jsp.jstl.fmt;uses:="javax.servlet,javax.servlet.jsp.js
+ tl.core,javax.servlet.jsp,javax.servlet.http";version="1.2",javax.ser
+ vlet.jsp.jstl.core;uses:="javax.servlet.jsp.tagext,javax.servlet.jsp,
+ javax.servlet,javax.servlet.http,javax.el";version="1.2",javax.servle
+ t.jsp.jstl.sql;version="1.2"
+Implementation-Title: Apache Standard Taglib Specification API
+Implementation-Version: 1.2.5
+Built-By: jeremy
+Specification-Vendor: Sun Microsystems, Inc.
+Tool: Bnd-0.0.357
+Bundle-Name: Apache Standard Taglib Specification API
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: The Apache Software Foundation
+Build-Jdk: 1.6.0_65
+Bundle-Version: 1.2.5
+Bnd-LastModified: 1426003883344
+Specification-Title: JSR-052 JavaServer Pages Standard Tag Library Spe
+ cification
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-Description: An implementation of the JSP Standard Tag Library 
+ (JSTL) Specification API.
+Bundle-DocURL: http://tomcat.apache.org/taglibs/standard-1.2.5/taglibs
+ -standard-spec
+Bundle-SymbolicName: org.apache.taglibs.taglibs-standard-spec;singleto
+ n=true
+Import-Package: javax.el,javax.servlet,javax.servlet.http,javax.servle
+ t.jsp,javax.servlet.jsp.jstl.core;version="1.2",javax.servlet.jsp.jst
+ l.fmt;version="1.2",javax.servlet.jsp.jstl.sql;version="1.2",javax.se
+ rvlet.jsp.jstl.tlv;version="1.2",javax.servlet.jsp.tagext,javax.xml.p
+ arsers,org.xml.sax,org.xml.sax.helpers
+Specification-Version: 1.2
+
