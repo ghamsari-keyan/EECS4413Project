@@ -1,0 +1,15 @@
+INSERT INTO item VALUES ('ITM1001', 'Laptop', 'Gaming Laptop GX5', 'High performance with 16GB RAM, 1TB SSD, NVIDIA RTX 3070', 'Computers', 'Electronix', 10, 1500, 1300, 4.5, false, 1.0, 'Windows', 2500);
+INSERT INTO item VALUES ('ITM1002', 'Desktop', 'Pro Workstation Desktop', 'Powerful with Ryzen 9, 32GB RAM, 2TB SSD', 'Computers', 'AdvancedComputing', 15, 2000, 1800, 4.8, false, 2.0, 'Windows', 7500);
+INSERT INTO item VALUES ('ITM1003', 'RAM', '16GB DDR4 RAM', '16GB DDR4, 3200MHz, for desktops', 'Components', 'SpeedMemory', 30, 80, 70, 4.7, false, 1.0, NULL, 50);
+INSERT INTO item VALUES ('ITM1004', 'Hard Drive', '1TB SSD', '1TB Solid State Drive, SATA 6Gb/s', 'Storage', 'FastStore', 25, 150, 130, 4.6, false, 1.0, NULL, 200);
+INSERT INTO item VALUES ('ITM1005', 'CPU', 'Ryzen 7 Processor', '8-core, 3.6 GHz, AM4 socket', 'Components', 'AMD', 20, 300, 280, 4.8, false, 1.0, NULL, 100);
+INSERT INTO item VALUES ('ITM1006', 'Monitor', '27-inch LED Monitor', '4K UHD, 144Hz, G-Sync compatible', 'Accessories', 'ViewMax', 20, 500, 450, 4.6, false, 1.0, NULL, 3500);
+INSERT INTO item VALUES ('ITM1007', 'Keyboard', 'Mechanical Keyboard', 'RGB backlit, mechanical switches', 'Accessories', 'KeyPlus', 40, 100, 90, 4.5, false, 1.0, NULL, 1000);
+INSERT INTO item VALUES ('ITM1008', 'Mouse', 'Wireless Gaming Mouse', 'RGB, adjustable DPI settings', 'Accessories', 'GamerGear', 35, 70, 60, 4.4, false, 1.0, NULL, 200);
+INSERT INTO item VALUES ('ITM1009', 'Graphics Card', 'NVIDIA RTX 3080', '10GB GDDR6X, Ray Tracing support', 'Components', 'NVIDIA', 15, 700, 650, 4.9, false, 1.0, NULL, 1000);
+INSERT INTO item VALUES ('ITM1010', 'Motherboard', 'Gaming Motherboard XZ', 'Supports AMD Ryzen CPUs, DDR4, PCIe 4.0', 'Components', 'BoardMax', 20, 250, 220, 4.7, false, 1.0, NULL, 1000);
+INSERT INTO item VALUES ('ITM1011', 'Power Supply', '750W Power Supply', '750W, 80 Plus Gold, modular', 'Components', 'PowerGrid', 25, 120, 110, 4.5, false, 1.0, NULL, 1500);
+INSERT INTO item VALUES ('ITM1012', 'Cooling Fan', 'RGB Cooling Fan', '120mm, RGB lighting, low noise', 'Accessories', 'CoolTech', 50, 30, 25, 4.2, false, 1.0, NULL, 100);
+INSERT INTO item VALUES ('ITM1013', 'External HDD', '4TB External Hard Drive', '4TB capacity, USB 3.0, portable', 'Storage', 'StoreMax', 30, 100, 90, 4.3, false, 1.0, NULL, 500);
+INSERT INTO item VALUES ('ITM1014', 'Laptop Charger', 'Universal Laptop Charger', '65W, compatible with multiple brands', 'Accessories', 'ChargePro', 40, 50, 45, 4.4, false, 1.0, NULL, 300);
+INSERT INTO item VALUES ('ITM1015', 'USB Hub', '4-Port USB 3.0 Hub', 'Expand USB connectivity, portable', 'Accessories', 'ConnectPlus', 50, 25, 20, 4.1, false, 1.0, NULL, 50);
