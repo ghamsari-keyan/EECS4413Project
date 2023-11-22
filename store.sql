@@ -40,11 +40,21 @@ foreign key(addressID) references Address(addrId)
 create table purchaseOrder(
 purchId int not null,
 customerId int  not null,
-itemID varchar(20) not null,
+quantity int not null,
 date varchar(20) not null,
 primary key(purchId),
-foreign key(customerId) references customer(id),
-foreign key(itemID) references item(itemId)
+foreign key(customerId) references customer(id)
+);
+
+create table orderItem(
+orderItemId INT NOT NULL AUTO_INCREMENT,
+purchId INT NOT NULL,
+itemId VARCHAR(20) NOT NULL,
+quantity INT NOT NULL,
+orderItemCost double not null.
+PRIMARY KEY(orderItemId),
+FOREIGN KEY(purchId) REFERENCES purchaseOrder(purchId),
+FOREIGN KEY(itemId) REFERENCES item(itemId)
 );
 
 create table administrator(
