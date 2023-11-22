@@ -31,7 +31,7 @@ body {
 
 .leftbar {
 	float: left;
-	height: 500px;
+	height: 650px;
 	width: 200px;
 	background: #9cdaeb;
 	border: 2px solid white;
@@ -63,6 +63,14 @@ table tr {
 	background-color: white;
 }
 
+table td img {
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    display: block; /* Ensure each image is on a new line */
+    width: 100%; /* Set the width to fill the container */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+
 table tr.classEven {
 	background-color: #ffd9b3;
 }
@@ -72,15 +80,15 @@ table tr td,th {
 }
 
 #th-type {
-	width: 100px;
+	width:300px;
 }
 
 #th-name {
-	width: 350px;
+	width: 170px;
 }
 
 #th-category {
-	width: 150px;
+	width: 100px;
 }
 
 #th-brand {
@@ -88,15 +96,15 @@ table tr td,th {
 }
 
 #th-quantity {
-	width: 150px;
+	width: 75px;
 }
 
 #th-price {
-	width: 150px;
+	width: 125px;
 }
 
 #th-rating {
-	width: 150px;
+	width: 75px;
 }
 
 #th-weight {
@@ -182,3 +190,4 @@ div.message {
 	padding: 0 0 0 7px;
 	text-align: left;
 }
+

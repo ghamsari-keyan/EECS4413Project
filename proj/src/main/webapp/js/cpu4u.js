@@ -1,14 +1,15 @@
 $(document).ready(function () {
-        $("#menu > li > div").click(function () {
- 
-            if (false == $(this).next().is(':visible')) {
-                $('#menu ul').slideUp(300);
-            }
-            $(this).next().slideToggle(300);
-        });
-        $('#menu ul:eq(0)').show();
- 
+    $("#menu > li > div").click(function (e) {
+        e.stopPropagation();
+
+        if (false == $(this).next().is(':visible')) {
+            $('#menu ul').slideUp(300);
+        }
+        $(this).next().slideToggle(300);
     });
+    $('#menu ul:eq(0)').show();
+});
+
 	
 
 $(document).ready(function() {
