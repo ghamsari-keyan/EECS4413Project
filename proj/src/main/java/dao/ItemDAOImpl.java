@@ -1,5 +1,5 @@
 package dao;
 
-public class ItemDAOImpl {
+public class ItemDAOImpl implements ItemDAO {
 
 }
