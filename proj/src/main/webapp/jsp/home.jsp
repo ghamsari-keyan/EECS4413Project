@@ -20,7 +20,7 @@
 		<jsp:include page="header.jsp" flush="true" />
 		<br />
 		<jsp:include page="leftColumn.jsp" flush="true" />
-		<span class="label" style="margin-left: 15px;">Featured Books</span>
+		<span class="label" style="margin-left: 15px;">Featured Products, on-sale Limited Offers!</span>
 		<table>
 			<tr>
 				<td><span class="tooltip_img1"><img

@@ -19,11 +19,11 @@ import model.Category;
 
 @SuppressWarnings("serial")
 @WebServlet("/books")
-public class BookController extends HttpServlet {
+public class Home extends HttpServlet {
 
 	private BookDAO bookDAO;
 
-	public BookController() {
+	public Home() {
 		super();
 	}
 

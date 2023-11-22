@@ -28,7 +28,7 @@
 			</div></li>
 		<li><div>
 				<a class="link1" href="${initParam.param1}?action=allBooks"><span
-					style="margin-left: 15px;" class="label">All Books</span></a>
+					style="margin-left: 15px;" class="label">All Products</span></a>
 			</div></li>
 		<li><div>
 				<span class="label" style="margin-left: 15px;">Categories </span>
