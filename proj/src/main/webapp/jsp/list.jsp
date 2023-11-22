@@ -14,7 +14,7 @@
 
 	<div>
 		<c:if test="${param.category != null}">
-			<span class="label" style="margin-left: 15px;"> List of ${param.category} Books 
+			<span class="label" style="margin-left: 15px;"> List of ${param.category} Products 
 			</span>
 		</c:if>
 	</div>
@@ -23,10 +23,14 @@
 	<table id="grid">
 		<thead>
 			<tr>
-				<th id="th-title">Book Title</th>
-				<th id="th-author">Author(s)</th>
-				<th id="th-author1">Category</th>
-
+				<th id="th-type">Product Type</th>
+				<th id="th-name">Product name</th>
+				<th id="th-category">Category</th>
+				<th id="th-brand">Brand</th>
+				<th id="th-quantity">Quantity</th>
+				<th id="th-price">Price ($)</th>
+				<th id="th-rating">Rating</th>
+				<th id="th-weight">Weight</th>
 			</tr>
 		</thead>
 

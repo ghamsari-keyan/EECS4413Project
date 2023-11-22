@@ -31,10 +31,10 @@ body {
 
 .leftbar {
 	float: left;
-	height: 310px;
-	width: 150px;
+	height: 500px;
+	width: 200px;
 	background: #9cdaeb;
-	border: 1px solid white;
+	border: 2px solid white;
 }
 
 .search {
@@ -71,16 +71,36 @@ table tr td,th {
 	padding: 2px;
 }
 
-#th-title {
+#th-type {
+	width: 100px;
+}
+
+#th-name {
 	width: 350px;
 }
 
-#th-author {
-	width: 200px;
+#th-category {
+	width: 150px;
+}
+
+#th-brand {
+	width: 150px;
+}
+
+#th-quantity {
+	width: 150px;
 }
 
 #th-price {
-	width: 100px;
+	width: 150px;
+}
+
+#th-rating {
+	width: 150px;
+}
+
+#th-weight {
+	width: 150px;
 }
 
 .classEven {

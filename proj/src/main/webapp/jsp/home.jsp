@@ -29,8 +29,6 @@
 				<td><img src="${initParam.imageURL}/A9781430247647-small_3.png" /></td>
 				<td><img src="${initParam.imageURL}/A9781430231684-small_8.png" /></td>
 				<td><img src="${initParam.imageURL}/A9781430249474-small_1.png" /></td>
-			</tr>
-			<tr>
 				<td><img src="${initParam.imageURL}/A9781430248187-small_1.png" /></td>
 				<td><img src="${initParam.imageURL}/A9781430243779-small_2.png" /></td>
 				<td><img src="${initParam.imageURL}/A9781430247401-small_1.png" /></td>

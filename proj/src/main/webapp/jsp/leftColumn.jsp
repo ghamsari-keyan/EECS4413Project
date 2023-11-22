@@ -23,15 +23,15 @@
 	<ul id="menu">
 		<li><div>
 				<a class="link1" href="${initParam.param1}"> <span class="label"
-					style="margin-left: 15px;">Home</span>
+					style="margin-left: 5px;">Home</span>
 				</a>
 			</div></li>
 		<li><div>
 				<a class="link1" href="${initParam.param1}?action=allBooks"><span
-					style="margin-left: 15px;" class="label">All Products</span></a>
+					style="margin-left: 5px;" class="label">All Products</span></a>
 			</div></li>
 		<li><div>
-				<span class="label" style="margin-left: 15px;">Categories </span>
+				<span class="label" style="margin-left: 5px;">Categories </span>
 			</div>
 			<ul>
 				
@@ -40,7 +40,7 @@
 			    		     
 				<li><a class="label"
 					href="${initParam.param1}?action=category&categoryId=${item.id}&category=${item.categoryDescription}">
-					<span  class="label" style="margin-left: 30px;">
+					<span  class="label" style="margin-left: 20px;">
 						${item.categoryDescription} </span></a>
 				</li>
      
