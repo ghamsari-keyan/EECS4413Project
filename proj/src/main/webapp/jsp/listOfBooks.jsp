@@ -25,7 +25,7 @@
 		<br>
 		<br>
 		<div>
-			<span class="sub-heading" style="margin-left: 15px;">Inventory Management</span>
+			<span class="sub-heading">Inventory Management</span>
 		</div>
 
 		<jsp:include page="list.jsp" flush="true" />
