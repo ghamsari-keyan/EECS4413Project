@@ -83,13 +83,22 @@ body {
 	margin-left: 15px;
 }
 
+.inventory_table_div {
+	align-items: center;
+	border: 1px solid white;
+	width:80%;
+	margin-left: 250px
+}
+
 table {
 	border-spacing: 1.5px;
+	align-self: center;
+	width: 100%;
 }
 
 table thead tr {
 	font-family: Arial, monospace;
-	font-size: 14px;
+	font-size: 20px;
 }
 
 table thead tr th {
@@ -99,9 +108,9 @@ table thead tr th {
 }
 
 table tr {
-	font-family: arial, monospace;
+	font-family: "Helvetica";
 	color: black;
-	font-size: 12px;
+	font-size: 18px;
 	background-color: white;
 }
 
@@ -121,7 +130,7 @@ table tr td,th {
 	padding: 2px;
 }
 
-#th-type {
+/* #th-type {
 	width:300px;
 }
 
@@ -151,7 +160,7 @@ table tr td,th {
 
 #th-weight {
 	width: 150px;
-}
+} */
 
 .classEven {
 	background-color: #ffd9b3;

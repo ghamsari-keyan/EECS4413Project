@@ -14,43 +14,57 @@
 
 	<div>
 		<c:if test="${param.category != null}">
-			<span class="label" style="margin-left: 15px;"> Inventory - For Management ONLY 
-			</span>
+			<span class="label"> Inventory Management</span>
 		</c:if>
 	</div>
+	<br>
 
-
-	<table id="grid">
-		<thead>
-			<tr>
-				<th id="th-type">ID</th>
-				<th id="th-name">Name</th>
-				<th id="th-category">Category</th>
-				<th id="th-brand">Brand</th>
-				<th id="th-quantity"></th>
-				<th id="th-price">Price ($)</th>
-				<th id="th-rating">Rating</th>
-				<th id="th-weight">Weight</th>
-			</tr>
-		</thead>
-
-
-		<tbody>
-
-
-			<c:forEach var="item" items="${inventory}">
+	<div class="inventory_table_div">
+		<table class="inv_table">
+			<thead>
 				<tr>
-					<td>${item.itemId}</td>
-					<td>${item.prodName}</td>
-					
+					<th>ID</th>
+					<th>Name</th>
+					<th>Brand</th>
+					<th>Category</th>
+					<th>Version</th>
+					<th>Platform</th>
+					<th>Quantity</th>
+					<th>Price ($)</th>
+					<th>Rating</th>
+					<th>Eco-Friendly</th>
+					<th>Weight</th>
 				</tr>
-			</c:forEach>
-
-
-
-		</tbody>
-
-	</table>
+			</thead>
+	
+	
+			<tbody>
+	
+	
+				<c:forEach var="item" items="${inventory}">
+					<tr>
+						<td>${item.itemId}</td>
+						<td>${item.prodName}</td>
+						<td>${item.brandName}</td>
+						<td>${item.prodType}</td>
+						<td>${item.prodVersion}</td>
+						<td>${item.prodPlatform}</td>
+						<td>${item.quantityAvail}</td>
+						<td>${item.price}</td>
+						<td>${item.rating}</td>
+						<td>${item.ecoFriendly}</td>
+						<td>${item.weight}</td>
+						
+						
+					</tr>
+				</c:forEach>
+	
+	
+	
+			</tbody>
+	
+		</table>
+	</div>
 </body>
 </html>
 

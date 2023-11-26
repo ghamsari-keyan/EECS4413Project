@@ -6,7 +6,6 @@ public class Item {
 	private String prodType;
 	private String prodName;
 	private String prodInfo;
-	private String category;
 	private String brandName;
 	private int quantityAvail;
 	private double price;
@@ -63,12 +62,7 @@ public class Item {
 	public void setProdInfo(String prodInfo) {
 		this.prodInfo = prodInfo;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+	
 	public String getBrandName() {
 		return brandName;
 	}
