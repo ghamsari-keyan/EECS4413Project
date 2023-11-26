@@ -14,7 +14,7 @@
 
 	<div>
 		<c:if test="${param.category != null}">
-			<span class="label" style="margin-left: 15px;"> List of ${param.category} Products 
+			<span class="label" style="margin-left: 15px;"> Inventory - For Management ONLY 
 			</span>
 		</c:if>
 	</div>
@@ -23,11 +23,11 @@
 	<table id="grid">
 		<thead>
 			<tr>
-				<th id="th-type">Product Type</th>
-				<th id="th-name">Product name</th>
+				<th id="th-type">ID</th>
+				<th id="th-name">Name</th>
 				<th id="th-category">Category</th>
 				<th id="th-brand">Brand</th>
-				<th id="th-quantity">Quantity</th>
+				<th id="th-quantity"></th>
 				<th id="th-price">Price ($)</th>
 				<th id="th-rating">Rating</th>
 				<th id="th-weight">Weight</th>
@@ -38,11 +38,11 @@
 		<tbody>
 
 
-			<c:forEach var="book" items="${bookList}">
+			<c:forEach var="item" items="${inventory}">
 				<tr>
-					<td>${book.bookTitle}</td>
-					<td>${book.author.firstName}${book.author.lastName}</td>
-					<td>${book.category}</td>
+					<td>${item.itemId}</td>
+					<td>${item.prodName}</td>
+					
 				</tr>
 			</c:forEach>
 

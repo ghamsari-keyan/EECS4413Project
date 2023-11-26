@@ -2,7 +2,7 @@ package model;
 
 public class Item {
 
-	private Long itemId;
+	private String itemId;
 	private String prodType;
 	private String prodName;
 	private String prodInfo;
@@ -18,31 +18,31 @@ public class Item {
 	
 	
 	
-	public Item(Long itemId, String prodType, String prodName, String prodInfo, String category, String brandName,
-			int quantityAvail, double price, double rating, boolean ecoFriendly, double prodVersion,
-			String prodPlatform, int weight) {
-		super();
-		this.itemId = itemId;
-		this.prodType = prodType;
-		this.prodName = prodName;
-		this.prodInfo = prodInfo;
-		this.category = category;
-		this.brandName = brandName;
-		this.quantityAvail = quantityAvail;
-		this.price = price;
-		this.rating = rating;
-		this.ecoFriendly = ecoFriendly;
-		this.prodVersion = prodVersion;
-		this.prodPlatform = prodPlatform;
-		this.weight = weight;
-	}
+//	public Item(Long itemId, String prodType, String prodName, String prodInfo, String category, String brandName,
+//			int quantityAvail, double price, double rating, boolean ecoFriendly, double prodVersion,
+//			String prodPlatform, int weight) {
+//		super();
+//		this.itemId = itemId;
+//		this.prodType = prodType;
+//		this.prodName = prodName;
+//		this.prodInfo = prodInfo;
+//		this.category = category;
+//		this.brandName = brandName;
+//		this.quantityAvail = quantityAvail;
+//		this.price = price;
+//		this.rating = rating;
+//		this.ecoFriendly = ecoFriendly;
+//		this.prodVersion = prodVersion;
+//		this.prodPlatform = prodPlatform;
+//		this.weight = weight;
+//	}
 	/*
 	 * Getter and Setter Methods for attributes
 	 */
-	public Long getItemId() {
+	public String getItemId() {
 		return itemId;
 	}
-	public void setItemId(Long itemId) {
+	public void setItemId(String itemId) {
 		this.itemId = itemId;
 	}
 	public String getProdType() {
