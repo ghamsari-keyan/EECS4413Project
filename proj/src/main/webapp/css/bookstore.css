@@ -86,7 +86,8 @@ body {
   	margin: 0;
   	padding: 0;
   	overflow: hidden;
-  	background-color: #dddddd;
+  	background-color: white;
+  	
 }
 
 
@@ -99,8 +100,8 @@ body {
 .nav-companyName {
 	float:left;
 	font-size:20px;
-	font-family: "Boetia";
-	margin-left:5%;
+	font-family: "Helvetica";
+  	text-decoration:none;
 	align-self:center;
 	padding:8px;
 	color:black;
@@ -116,15 +117,15 @@ body {
 	text-decoration:none;
 }
 
-navLi a {
+.navLi a {
 	color:black;
 	display:block;
 	text-decoration:none;
 	
 }
 
-navLi a:hover {
-	opacity:50%
+.navLi a:hover {
+	opacity:70%
 }
 
 
@@ -134,20 +135,24 @@ navLi a:hover {
 
 .inventory_table_div {
 	align-items: center;
-	border: 1px solid white;
+	/* border: 1px solid white; */
 	width:80%;
 	margin-left: 250px
 }
 
 table {
-	border-spacing: 1.5px;
+	/* border-spacing: 1.5px; */
 	align-self: center;
 	width: 100%;
+	background-color: black;
+	color:white;
+	font-family: "Helvetica";
+	
 }
 
 table thead tr {
-	font-family: Arial, monospace;
 	font-size: 20px;
+	color: white
 }
 
 table thead tr th {
@@ -156,11 +161,11 @@ table thead tr th {
 	background-color: #ffb366;
 }
 
-table tr {
+table thead tr {
 	font-family: "Helvetica";
-	color: black;
+	color: white;
 	font-size: 18px;
-	background-color: white;
+	background-color: black;
 }
 
 table td img {
