@@ -42,6 +42,10 @@ public class adminLogin extends HttpServlet {
 
         // Redirect to the home servlet
         response.sendRedirect(request.getContextPath() + "/books");
+        
+        
+        
+        
 	}
 
 }

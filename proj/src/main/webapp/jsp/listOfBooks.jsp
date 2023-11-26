@@ -21,11 +21,19 @@
 		<jsp:include page="header.jsp" flush="true" />
 		<br />
 		<jsp:include page="leftColumn.jsp" flush="true" />
+		
+		<br>
+		<br>
 		<div>
-			<span class="label" style="margin-left: 15px;">Inventory Management</span>
+			<span class="sub-heading" style="margin-left: 15px;">Inventory Management</span>
 		</div>
 
 		<jsp:include page="list.jsp" flush="true" />
+		
+		<br>
+		<br>
+		
+		<p class="info-par">This is a comprehensive display of all the products in our database. Functionality for changing the database will be added soon.</p>
 
 
 	</div>
