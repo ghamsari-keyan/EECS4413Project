@@ -151,12 +151,12 @@ body {
 
 
 .main-menu-list {
-	background-color: black;
 	list-style-type: none;
 	margin: 0;
   	padding: 0;
   	overflow: hidden;
   	background-color: white;
+  	border:1px solid lightgray;
 	
 }
 
@@ -236,14 +236,14 @@ table tr td,th {
 
 
 .grid {
+	margin-left:5%;
 	display: grid;
-  	grid-template-columns: repeat(4, minmax(25%, auto));
+  	grid-template-columns: repeat(4, minmax(20%, auto));
   	max-width: var(--max-width);
-  	width: 100%;
+  	max-width: 90%;
   	margin-top:5%;
   	padding: 10px;
-  	column-gap:5px;
-  	row-gap:5px;
+  	gap: 5px;
   	
 }
 
@@ -251,13 +251,13 @@ table tr td,th {
 	
 	height:420px;
   	/* background: rgb(60,60,60); */
-  	border:1px solid white;
+  	
   	transition: background 200ms, border 200ms;
 }
 
 .prodIm {
 	height:70%;
-	width:100%;
+	width:80%;
 	border:1px solid white;
 	
 }
@@ -265,11 +265,12 @@ table tr td,th {
 .featured-add-button {
 
 	margin-top: 10px;
-	width:150px;
+	width:80%;
 	background-color:white;
 	font-family:"Helvetica";
-	font-size:14px;
+	font-size:16px;
 	border:1px solid white;
+	float:left;
 	
 }
 
@@ -294,7 +295,7 @@ table tr td,th {
 	font-size:14px;
 	color:darkgrey;
 	float:left;
-	width: 90%;
+	width: 80%;
 	text-align:left;
 }
 
@@ -331,36 +332,17 @@ div.message {
 	width: 280px;
 }
 
-/* #menu {
-	list-style: none;
-	padding: 0 0 0 0;
-	width: 80%;
-	margin: 10px 10px 10px 10px;
+.footer {
+	background-color:white;
+	font-family:"Helvetica";
+	font-size:16px;
 }
 
-#menu li {
-	display: block;
-	background-color: #ffd9b3;
-	font-weight: bold;
-	font-family: "Calibri", Georgia, Serif;
-	color: white;
-	text-align: left;
-	margin: 1px;
-	cursor: pointer;
-	padding: 10px 0 0 0;
+.footer-ul {
+	
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+	
 }
-
-#menu ul {
-	list-style: none;
-	padding: 10px 0 0 0;
-	display: none;
-}
-
-#menu ul li {
-	font-weight: bold;
-	cursor: auto;
-	background-color: #fff;
-	padding: 0 0 0 7px;
-	text-align: left;
-} */
-

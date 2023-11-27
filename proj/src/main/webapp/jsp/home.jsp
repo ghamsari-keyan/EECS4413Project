@@ -43,15 +43,18 @@
 						<span class="info-featured"> This is a little information about the product
 						$500.00 CAD</span>
 					</p>
-					<br>
+					
 					<input class="featured-add-button" type="submit" value="ADD TO CART">
 				</div>
 			</c:forEach>
-			
-
-			
 		</div>
 		
+		<br>
+		<br>
+		<br>
+		<div>
+			<jsp:include page="footer.jsp" flush="true" />
+		</div>
 		
 		
 		<%-- <table>
