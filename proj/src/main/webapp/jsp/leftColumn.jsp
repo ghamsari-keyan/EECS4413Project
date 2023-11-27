@@ -12,7 +12,7 @@
 	<li class="main-menu-list-link">|</li>
 	<li class="main-menu-list-link"><a href="${initParam.param1}?action=allBooks">SHOP ALL</a></li>
 	<li class="main-menu-list-link">|</li>
-	<li class="main-menu-list-link"><a href="">SHOP CATEGORIES</a></li>
+	<li class="main-menu-list-link"><a href="${initParam.param1}?action=category">SHOP CATEGORIES</a></li>
 	<li class="main-menu-list-link">|</li>
 	<li class="main-menu-list-link"><a href="${initParam.param1}?action=brands">SHOP BRANDS</a></li>
 </ul>

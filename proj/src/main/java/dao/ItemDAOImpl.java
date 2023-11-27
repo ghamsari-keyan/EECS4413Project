@@ -98,7 +98,7 @@ public class ItemDAOImpl implements ItemDAO {
 	/*
 	 * returns a list of products given the type of product a user is looking for
 	 */
-	public List<Item> getProductsByCategory(String[] productTypes) {
+	public List<Item> getProductsByCategory(String productTypes) {
 		
 		return null;
 	}

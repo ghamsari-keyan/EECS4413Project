@@ -21,9 +21,13 @@
 <body>
 	<div id="centered">
 		<jsp:include page="header.jsp" flush="true" />
-		<br />
 		<jsp:include page="leftColumn.jsp" flush="true" />
-		<jsp:include page="list.jsp" flush="true" />
+		
+		<br>
+		<br>
+		<div>
+			<span class="sub-heading">Search by Category</span>
+		</div>
 		
  
 	</div>
