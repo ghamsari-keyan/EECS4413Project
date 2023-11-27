@@ -116,7 +116,7 @@ public class Home extends HttpServlet {
 			
 			List<Item> prodList = itemDAO.getProductsByCategory(category);
 			
-			request.setAttribute("bookList", prodList);
+			request.setAttribute("categories", prodList);
 
 		} catch (Exception e) {
 			System.out.println(e);

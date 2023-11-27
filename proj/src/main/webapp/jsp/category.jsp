@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <%-- <%@page import="java.util.List"%> --%>
 <%-- <%@page import="java.util.ArrayList"%> --%>
@@ -28,6 +31,10 @@
 		<div>
 			<span class="sub-heading">Search by Category</span>
 		</div>
+		<c:forEach var="category" items="${categories}">
+			<button type="button" onclick="searchByCategory('${category}')">${category.prodType}</button>
+        </c:forEach> 
+
 		<jsp:include page="list.jsp" flush="true" />
 		
  
