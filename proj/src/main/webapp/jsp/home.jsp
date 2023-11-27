@@ -16,12 +16,36 @@
 </head>
 <body>
 	<div id="centered">
-
-		<jsp:include page="header.jsp" flush="true" />
-		<br />
-		<jsp:include page="leftColumn.jsp" flush="true" />
+	
+		<div>		
+			<jsp:include page="header.jsp" flush="true" />
+		</div>
+		
+		<div>		
+			<jsp:include page="leftColumn.jsp" flush="true" />
+		</div>
+		<br>
 		<span class="info-par">Featured Products, on-sale Limited Offers!</span>
-		<table>
+		
+		
+		<!-- now we can display some featured products. We can order them according to some 
+		specification -->
+		
+		<div class="grid">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		<%-- <table>
 			<tr>
 				<td><span class="tooltip_img1"><img
 						src="${initParam.imageURL}/A9781430248064-small_3.png" /></span></td>
@@ -35,7 +59,7 @@
 				<td><img src="${initParam.imageURL}/A9781430246596-small_1.png" /></td>
 				<td><img src="${initParam.imageURL}/A9781430257349-small_1.png" /></td>
 			</tr>
-		</table>
+		</table> --%>
 	</div>
 </body>
 </html>

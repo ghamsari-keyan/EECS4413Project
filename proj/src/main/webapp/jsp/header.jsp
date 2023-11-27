@@ -5,9 +5,17 @@
 <link rel="stylesheet" href="css/bookstore.css" type="text/css" />
 
 <ul class="nav_ul">
-	<li class="nav-companyName"><a>CPU4U</a></li>
-	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in-admin.html"> Admin Login</a></li>
-	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in.html">Sign In</a></li>
+	<li class="nav-companyName"><a><b>CPU4U.com</b></a></li>
+	<li class="search-bar">
+		<form class="search">
+			<input type="hidden" name="action" value="search"/> 
+			<input id="text" type="text" name="keyWord" size="12" placeholder="Search Store by Product ID, name, category, brand, etc" />
+       		<input id="submit" type="submit" value="Search" />
+   		</form>
+	</li>
+	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in-admin.html">ADMIN</a></li>
+	<li class="navLi"> | </li>
+	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in.html">SIGN IN</a></li>
 </ul>
 
 <%-- <div style="width:100%;display:table;border:1px solid white;">
