@@ -31,6 +31,8 @@
 		<div>
 			<span class="sub-heading">Search by Category</span>
 		</div>
+		<br>
+		
 		<c:forEach var="category" items="${categories}">
 			<button type="button" onclick="searchByCategory('${category}')">${category.prodType}</button>
         </c:forEach> 
