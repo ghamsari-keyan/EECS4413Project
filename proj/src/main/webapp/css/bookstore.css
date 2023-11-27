@@ -91,7 +91,12 @@ body {
 }
 
 
-
+.big-par {
+	font-family:"Helvetica";
+	color: white;
+	font-size: 65px;
+	float: left;
+}
 
 .info-par {
 	font-family:"Helvetica";
@@ -229,56 +234,74 @@ table tr td,th {
 	padding: 2px;
 }
 
-/* #th-type {
-	width:300px;
+
+.grid {
+	display: grid;
+  	grid-template-columns: repeat(4, minmax(25%, auto));
+  	max-width: var(--max-width);
+  	width: 100%;
+  	margin-top:5%;
+  	padding: 10px;
+  	column-gap:5px;
+  	row-gap:5px;
+  	
 }
 
-#th-name {
-	width: 170px;
+.card{
+	
+	height:420px;
+  	/* background: rgb(60,60,60); */
+  	border:1px solid white;
+  	transition: background 200ms, border 200ms;
 }
 
-#th-category {
-	width: 100px;
+.prodIm {
+	height:70%;
+	width:100%;
+	border:1px solid white;
+	
 }
 
-#th-brand {
-	width: 150px;
+.featured-add-button {
+
+	margin-top: 10px;
+	width:150px;
+	background-color:white;
+	font-family:"Helvetica";
+	font-size:14px;
+	border:1px solid white;
+	
 }
 
-#th-quantity {
-	width: 75px;
+.featured-add-button:hover {
+	background-color:black;
+	color:white;	
+	
 }
 
-#th-price {
-	width: 125px;
+.header-featured {
+	font-family:"Helvetica";
+	font-size: 30px;
+	height:auto;
+	padding:0;
+	color:white;
+	float:left;
+
 }
 
-#th-rating {
-	width: 75px;
+.info-featured {
+	font-family:"Helvetica";
+	font-size:14px;
+	color:darkgrey;
+	float:left;
+	width: 90%;
+	text-align:left;
 }
-
-#th-weight {
-	width: 150px;
-} */
 
 .classEven {
 	background-color: #ffd9b3;
 }
 
-/* a:link {
-	font-family: arial, monospace;
-	text-decoration: none;
-	color: teal;
-} */
-
-/* a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: black;
-	text-decoration: none;
-} */
 
 span.tooltip_message,span.tooltip_img1 {
 	cursor: pointer;

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
- 
+<%@ page import = "java.io.*, java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%request.getProtocol();%>
 
 <!DOCTYPE html >
 
@@ -25,22 +26,30 @@
 			<jsp:include page="leftColumn.jsp" flush="true" />
 		</div>
 		<br>
-		<span class="info-par">Featured Products, on-sale Limited Offers!</span>
+		<br>
+		<span class="big-par">Featured Products, on-sale Limited Offers!</span>
 		
+		<br>
+		<br>
 		
 		<!-- now we can display some featured products. We can order them according to some 
 		specification -->
 		
 		<div class="grid">
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			<c:forEach begin="0" end="10" varStatus="loop">
+				<div class="card">
+					<div class="prodIm"></div>
+						<p><span class="header-featured">PRODUCT ${loop.index}</span>				
+						<span class="info-featured"> This is a little information about the product
+						$500.00 CAD</span>
+					</p>
+					<br>
+					<input class="featured-add-button" type="submit" value="ADD TO CART">
+				</div>
+			</c:forEach>
+			
+
+			
 		</div>
 		
 		
