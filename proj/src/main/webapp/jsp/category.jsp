@@ -28,6 +28,7 @@
 		<div>
 			<span class="sub-heading">Search by Category</span>
 		</div>
+		<jsp:include page="list.jsp" flush="true" />
 		
  
 	</div>
