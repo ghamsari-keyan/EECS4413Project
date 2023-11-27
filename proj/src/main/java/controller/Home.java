@@ -62,10 +62,10 @@ public class Home extends HttpServlet {
 				findAllBooks(request, response);
 				url = base + "listOfBooks.jsp";
 				break;
-//			case "category":
-//				findBooksByCategory(request, response, category);
-//				url = base + "category.jsp?category=" + category;
-//				break;
+			case "category":
+				findBooksByCategory(request, response, category);
+				url = base + "category.jsp?category=" + category;
+				break;
 //			case "search":
 //				searchBooks(request, response, keyWord);
 //				url = base + "searchResult.jsp";
@@ -109,17 +109,17 @@ public class Home extends HttpServlet {
 //		}
 //	}
 //
-//	private void findBooksByCategory(HttpServletRequest request, HttpServletResponse response, String category)
-//			throws ServletException, IOException {
-//		try {
-//			// Calling DAO method to search books by category
-//			
-//			List<Book> bookList = bookDAO.findBooksByCategory(category);
-//			
-//			request.setAttribute("bookList", bookList);
-//
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		}
-//	}
+	private void findBooksByCategory(HttpServletRequest request, HttpServletResponse response, String category)
+			throws ServletException, IOException {
+		try {
+			// Calling DAO method to search books by category
+			
+			List<Item> prodList = itemDAO.getProductsByCategory(category);
+			
+			request.setAttribute("bookList", prodList);
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }
