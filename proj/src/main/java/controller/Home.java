@@ -23,7 +23,6 @@ import dao.ItemDAOImpl;
 @WebServlet("/books")
 public class Home extends HttpServlet {
 
-	private BookDAO bookDAO;
 	private ItemDAO itemDAO;
 
 	public Home() {
@@ -70,8 +69,8 @@ public class Home extends HttpServlet {
 			 * Implementing the sort by brand header
 			 */
 			case "brands":
-				findProductsByBrand(request, response, keyWord);
-				url = base + "brands.jsp?brand=" + keyWord;
+				findProductsByBrand(request, response);
+				url = base + "brands.jsp";
 				break;
 			}
 		}
@@ -101,7 +100,7 @@ public class Home extends HttpServlet {
 	/*
 	 * Get all products by brand
 	 */
-	private void findProductsByBrand(HttpServletRequest request, HttpServletResponse response, String brandName) 
+	private void findProductsByBrand(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		try {
 			

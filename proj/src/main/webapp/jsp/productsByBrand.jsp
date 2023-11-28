@@ -18,28 +18,9 @@
 	<div id="centered">
 		<jsp:include page="header.jsp" flush="true" />
 		<jsp:include page="leftColumn.jsp" flush="true" />
-		
-		<br>
-		<br>
-		<div>
-			<span class="big-par">Search by Brands</span>
-		</div>
-		<br>
-		
-		<div class="grid">
-			<c:forEach var="brand" items="${brandProds}">
-				<div class="brandCard">
-					<a href="Brand?chooseBrand=${brand}"><span class="header-featured"> ${brand}</span></a>
-				
-				</div>
-			
-				
-	        </c:forEach> 
-	
-			
-		</div>
-		
- 
 	</div>
+	
+	<span class="big-par">${brand}</span>
+
 </body>
 </html>
