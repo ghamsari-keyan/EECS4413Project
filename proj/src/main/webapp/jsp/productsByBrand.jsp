@@ -19,7 +19,7 @@
 		<jsp:include page="header.jsp" flush="true" />
 		<jsp:include page="leftColumn.jsp" flush="true" />
 	</div>
-	
+	<br>
 	<span class="big-par">All ${brand} Products</span>
 	
 	<div class="grid">
