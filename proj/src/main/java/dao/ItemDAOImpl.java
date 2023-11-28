@@ -94,7 +94,7 @@ public class ItemDAOImpl implements ItemDAO {
 		finally {
 			closeConnection(con);
 		}
-
+		
 		return resu;
 	}
 

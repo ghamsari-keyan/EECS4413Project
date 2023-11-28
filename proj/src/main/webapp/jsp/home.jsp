@@ -36,7 +36,7 @@
 		specification -->
 		
 		<div class="grid">
-			<c:forEach begin="0" end="10" varStatus="loop">
+			<c:forEach begin="0" end="7" varStatus="loop">
 				<div class="card">
 					<div class="prodIm"></div>
 						<p><span class="header-featured">PRODUCT ${loop.index}</span>				
