@@ -15,26 +15,7 @@ public class Item {
 	private String prodPlatform;
 	private int weight;
 	
-	
-	
-//	public Item(Long itemId, String prodType, String prodName, String prodInfo, String category, String brandName,
-//			int quantityAvail, double price, double rating, boolean ecoFriendly, double prodVersion,
-//			String prodPlatform, int weight) {
-//		super();
-//		this.itemId = itemId;
-//		this.prodType = prodType;
-//		this.prodName = prodName;
-//		this.prodInfo = prodInfo;
-//		this.category = category;
-//		this.brandName = brandName;
-//		this.quantityAvail = quantityAvail;
-//		this.price = price;
-//		this.rating = rating;
-//		this.ecoFriendly = ecoFriendly;
-//		this.prodVersion = prodVersion;
-//		this.prodPlatform = prodPlatform;
-//		this.weight = weight;
-//	}
+
 	/*
 	 * Getter and Setter Methods for attributes
 	 */

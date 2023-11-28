@@ -95,6 +95,7 @@ public class ItemDAOImpl implements ItemDAO {
 			closeConnection(con);
 		}
 		
+		
 		return resu;
 	}
 
@@ -189,6 +190,89 @@ public class ItemDAOImpl implements ItemDAO {
 
 
 		return null;
+	}
+	
+	/*
+	 * Returns the products of a certain Brand
+	 */
+	public List<Item> getProductsByBrand(String brand) {
+		
+		List<Item> resu = new ArrayList<Item>();
+
+		String query = "SELECT * FROM computer_store.item WHERE brand='" + brand + "'";
+
+		Connection con = null;
+		try {
+			con = getConnection();
+			Statement stmt = con.createStatement();
+
+			ResultSet res = stmt.executeQuery(query);
+
+			while (res.next()) {
+				Item product = new Item();
+
+				/*
+				 * Retrieving all the information about a product 
+				 */
+				product.setItemId(res.getString("itemId"));
+				product.setProdName(res.getString("prodName"));
+				product.setProdVersion(res.getDouble("prodVersion"));
+				product.setProdPlatform(res.getString("prodPlatform"));
+				product.setProdType(res.getString("prodType"));
+				product.setProdInfo(res.getString("prodInfo"));
+				product.setBrandName(res.getString("brand"));
+				product.setQuantityAvail(res.getInt("quantity"));
+				product.setPrice(res.getDouble("price"));
+				product.setRating(res.getDouble("rating"));
+				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
+				product.setWeight(res.getInt("weight"));
+
+				// now add the product to the list
+				resu.add(product);
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			closeConnection(con);
+		}
+		
+		
+		return resu;
+		
+		
+	}
+	
+	
+	public List<String> getBrandNames() {
+		
+		List<String> brands = new ArrayList<String>();
+		
+		String query = "SELECT DISTINCT BRAND FROM computer_store";
+
+		Connection con = null;
+		try {
+			con = getConnection();
+			Statement stmt = con.createStatement();
+
+			ResultSet res = stmt.executeQuery(query);
+			
+			while(res.next()) {
+				brands.add(res.getString("brand"));
+			}
+
+			
+		
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection(con);
+		}
+		
+		return brands;
 	}
 
 }

@@ -19,28 +19,8 @@
 	</div>
 	<br>
 
+	<!-- Product display for all products in our inventory -->
 	<div class="grid">
-		<!-- <table class="inv_table">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Brand</th>
-					<th>Category</th>
-					<th>Version</th>
-					<th>Platform</th>
-					<th>Quantity</th>
-					<th>Price ($)</th>
-					<th>Rating</th>
-					<th>Eco-Friendly</th>
-					<th>Weight</th>
-				</tr>
-			</thead> -->
-	
-	
-			<!-- <tbody> -->
-		<
-	
 		<c:forEach var="item" items="${inventory}">	
 			<div class="card">
 					<div class="prodIm"></div>

@@ -66,10 +66,13 @@ public class Home extends HttpServlet {
 				findBooksByCategory(request, response, category);
 				url = base + "category.jsp?category=" + category;
 				break;
-//			case "search":
-//				searchBooks(request, response, keyWord);
-//				url = base + "searchResult.jsp";
-//				break;
+			/*
+			 * Implementing the sort by brand header
+			 */
+			case "brands":
+				findProductsByBrand(request, response, keyWord);
+				url = base + "brands.jsp?brand=" + keyWord;
+				break;
 			}
 		}
 
@@ -86,7 +89,7 @@ public class Home extends HttpServlet {
 			// Calling DAO method to retrieve a list of all books
 			
 			List<Item> inventory = itemDAO.productList();
-			System.out.println(inventory.get(0));
+			
 			request.setAttribute("inventory", inventory);
 
 		} catch (Exception e) {
@@ -94,21 +97,26 @@ public class Home extends HttpServlet {
 		}
 	}
 
-	//search books by keyword
-//	private void searchBooks(HttpServletRequest request, HttpServletResponse response, String keyWord)
-//			throws ServletException, IOException {
-//		try {
-//			// Calling DAO method to search books by keyword
-//			
-//			List<Book> bookList = bookDAO.searchBooksByKeyword(keyWord);
-//			
-//			request.setAttribute("bookList", bookList);
-//
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		}
-//	}
-//
+
+	/*
+	 * Get all products by brand
+	 */
+	private void findProductsByBrand(HttpServletRequest request, HttpServletResponse response, String brandName) 
+			throws ServletException, IOException {
+		try {
+			
+			List<Item> prodsOfBrand = itemDAO.getProductsByBrand(brandName);
+					
+			request.setAttribute("brandProds", prodsOfBrand);
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	
+	
 	private void findBooksByCategory(HttpServletRequest request, HttpServletResponse response, String category)
 			throws ServletException, IOException {
 		try {
