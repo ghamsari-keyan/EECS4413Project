@@ -24,7 +24,7 @@
 		<br>
 		<br>
 		<div>
-			<span class="sub-heading">Inventory Management</span>
+			<span class="big-par">SHOP ALL</span>
 		</div>
 
 		<jsp:include page="list.jsp" flush="true" />
@@ -36,6 +36,8 @@
 
 
 	</div>
+	
+	<jsp:include page="footer.jsp" flush="true" />
 
 
 </body>

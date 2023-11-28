@@ -14,13 +14,13 @@
 
 	<div>
 		<c:if test="${param.category != null}">
-			<span class="label"> Inventory Management</span>
+			<span class="label"> SHOP ALL</span>
 		</c:if>
 	</div>
 	<br>
 
-	<div class="inventory_table_div">
-		<table class="inv_table">
+	<div class="grid">
+		<!-- <table class="inv_table">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -35,14 +35,25 @@
 					<th>Eco-Friendly</th>
 					<th>Weight</th>
 				</tr>
-			</thead>
+			</thead> -->
 	
 	
-			<tbody>
+			<!-- <tbody> -->
+		<
 	
-	
-				<c:forEach var="item" items="${inventory}">
-					<tr>
+		<c:forEach var="item" items="${inventory}">	
+			<div class="card">
+					<div class="prodIm"></div>
+						<p><span class="header-featured">${item.prodName}</span>				
+						<span class="info-featured"> ${item.prodInfo}</span>
+						<span class="info-featured">$${item.price}</span>
+					</p>
+					
+					<input class="featured-add-button" type="submit" value="ADD TO CART">
+				</div>
+		</c:forEach>
+		
+					<%-- <tr>
 						<td>${item.itemId}</td>
 						<td>${item.prodName}</td>
 						<td>${item.brandName}</td>
@@ -59,11 +70,11 @@
 					</tr>
 				</c:forEach>
 	
+		
 	
+			</tbody> --%>
 	
-			</tbody>
-	
-		</table>
+		<!-- </table -->>
 	</div>
 </body>
 </html>
