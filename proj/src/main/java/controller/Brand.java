@@ -1,6 +1,6 @@
 package controller;
 
-import java.awt.List;
+import java.util.*;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -61,6 +61,14 @@ public class Brand extends HttpServlet {
 		String action = request.getParameter("chooseBrand");
 		
 		
+		/*
+		 * Here we will call the function to access the DAO method for finding all products by brand
+		 */
+		if (action != null) {
+			
+			findProductsByBrand(request, response, action);
+			
+		}
 		
 		System.out.println(action);
 		
@@ -68,8 +76,21 @@ public class Brand extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
-//		
+	}
+	
+	
+	private void findProductsByBrand(HttpServletRequest request, HttpServletResponse response, String brand) 
+			throws ServletException, IOException {
+		try {
+			
+			List<Item> prodsOfBrand = itemDAO.getProductsByBrand(brand);
+					
+			request.setAttribute("brandProds", prodsOfBrand);
 		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
 	}
 	
 	

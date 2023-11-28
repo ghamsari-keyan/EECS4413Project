@@ -20,7 +20,21 @@
 		<jsp:include page="leftColumn.jsp" flush="true" />
 	</div>
 	
-	<span class="big-par">${brand}</span>
+	<span class="big-par">All ${brand} Products</span>
+	
+	<div class="grid">
+		<c:forEach var="item" items="${brandProds}">	
+			<div class="card">
+					<div class="prodIm"></div>
+						<p><span class="header-featured">${item.prodName}</span>				
+						<span class="info-featured"> ${item.prodInfo}</span>
+						<span class="info-featured">$${item.price}</span>
+					</p>
+					
+					<input class="featured-add-button" type="submit" value="ADD TO CART">
+				</div>
+		</c:forEach>
+	</div>
 
 </body>
 </html>

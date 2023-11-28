@@ -32,30 +32,8 @@
 					<input class="featured-add-button" type="submit" value="ADD TO CART">
 				</div>
 		</c:forEach>
-		
-					<%-- <tr>
-						<td>${item.itemId}</td>
-						<td>${item.prodName}</td>
-						<td>${item.brandName}</td>
-						<td>${item.prodType}</td>
-						<td>${item.prodVersion}</td>
-						<td>${item.prodPlatform}</td>
-						<td>${item.quantityAvail}</td>
-						<td>${item.price}</td>
-						<td>${item.rating}</td>
-						<td>${item.ecoFriendly}</td>
-						<td>${item.weight}</td>
-						
-						
-					</tr>
-				</c:forEach>
-	
-		
-	
-			</tbody> --%>
-	
-		<!-- </table -->>
 	</div>
+	
 </body>
 </html>
 
