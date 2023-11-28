@@ -251,7 +251,7 @@ public class ItemDAOImpl implements ItemDAO {
 		
 		List<String> brands = new ArrayList<String>();
 		
-		String query = "SELECT DISTINCT BRAND FROM computer_store";
+		String query = "SELECT DISTINCT BRAND FROM computer_store.item";
 
 		Connection con = null;
 		try {

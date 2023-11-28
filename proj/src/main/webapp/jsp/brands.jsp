@@ -33,11 +33,18 @@
 		</div>
 		<br>
 		
-		<c:forEach var="category" items="${categories}">
-			<button type="button" onclick="searchByCategory('${category}')">${category.prodType}</button>
-        </c:forEach> 
-
-		<jsp:include page="list.jsp" flush="true" />
+		<div class="grid">
+			<c:forEach var="brand" items="${brandProds}">
+				<div class="brandCard">
+					<a href="${initParam.param1}"><span class="header-featured"> ${brand}</span></a>
+				
+				</div>
+			
+				
+	        </c:forEach> 
+	
+			
+		</div>
 		
  
 	</div>

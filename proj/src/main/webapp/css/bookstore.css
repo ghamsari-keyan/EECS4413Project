@@ -204,9 +204,37 @@ table tr td,th {
 	
 	height:420px;
   	/* background: rgb(60,60,60); */
-  	
   	transition: background 200ms, border 200ms;
 }
+
+.brandCard {
+	
+	height:150px;
+	background:none;
+	border: 1px solid white;
+	border-radius: 5px;
+	
+}
+
+.brandCard span {
+	margin-top: 10%;
+	margin-left: 10%;
+}
+
+.brandCard:hover {
+	
+	background-color:white;
+	color:black;
+}
+
+
+
+.brandCard:hover span {
+	
+	color:black;
+}
+
+
 
 .prodIm {
 	height:70%;

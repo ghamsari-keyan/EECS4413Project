@@ -105,9 +105,9 @@ public class Home extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			
-			List<Item> prodsOfBrand = itemDAO.getProductsByBrand(brandName);
+			List<String> brandNames = itemDAO.getBrandNames();
 					
-			request.setAttribute("brandProds", prodsOfBrand);
+			request.setAttribute("brandProds", brandNames);
 		
 		}
 		catch(Exception e) {
