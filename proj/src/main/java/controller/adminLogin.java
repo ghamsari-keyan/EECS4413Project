@@ -1,11 +1,17 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.AdministratorDAO;
+import dao.AdministratorDAOImpl;
+import dao.ItemDAOImpl;
 
 /**
  * Servlet implementation class adminLogin
@@ -13,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/adminLogin")
 public class adminLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private AdministratorDAO adminDAO;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -20,6 +28,14 @@ public class adminLogin extends HttpServlet {
     public adminLogin() {
         super();
         // TODO Auto-generated constructor stub
+    }
+    
+    
+    
+    public void init(ServletConfig config) throws ServletException {
+    	super.init(config);
+    	
+    	adminDAO = new AdministratorDAOImpl();
     }
 
 	/**
@@ -38,10 +54,16 @@ public class adminLogin extends HttpServlet {
 		String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        response.getWriter().println("Successfully logged in");
+        
+        System.out.println(username);
+        System.out.println(password);
+        
+        
+        
+//        response.getWriter().println("Successfully logged in");
 
         // Redirect to the home servlet
-        response.sendRedirect(request.getContextPath() + "/books");
+//        response.sendRedirect(request.getContextPath() + "/books");
         
         
         
