@@ -44,6 +44,8 @@
 		<div>
 		
 			<ul class="admin-dash">
+				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=home">HOME</a></li>
+				<li class="admin-dash-list-ignore">|</li>
 				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=inventory">INVENTORY</a></li>
 				<li class="admin-dash-list-ignore">|</li>
 				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=customer">CUSTOMER INFO</a></li>

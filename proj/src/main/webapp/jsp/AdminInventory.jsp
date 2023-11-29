@@ -24,6 +24,13 @@
 				
 		<div>
 		
+		
+		<div>
+			<ul class="admin-dash" style="width:fit-content">
+				<li class="admin-dash-list" style="padding:0;border:1px solid white"><a class="admin-dash-list-link" style="font-size:14px" href="adminLogin?action=addProduct">Add Product</a></li>
+			</ul>
+		</div>
+
 		<br>
 		<br>
 		<br>
@@ -42,6 +49,7 @@
 				<td class="inventory-table-heading-col">Current Inventory</td>
 				<td class="inventory-table-heading-col">Eco-Friendly</td>
 				<td class="inventory-table-heading-col">Weight</td>
+				<td class="inventory-table-heading-col"></td>
 			</tr>
 			
 			<c:forEach var="prod" items="${inventory}">
@@ -57,6 +65,7 @@
 					<td class="inventory-table-data-col">${prod.quantityAvail}</td>
 					<td class="inventory-table-data-col">${prod.ecoFriendly}</td>
 					<td class="inventory-table-data-col">${prod.weight}</td>
+					<td class="inventory-table-data-col"><a href="adminLogin?action=edit${prod.itemId}">edit item</a></td>
 				</tr>
 			
 			</c:forEach>

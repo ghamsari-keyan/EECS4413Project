@@ -127,11 +127,16 @@ body {
 .admin-dash-list {
 	font-family:"HELVETICA";
 	font-size:25px;
-	color:white;
 	background:none;
 	display:block;
 	float:left;
 	padding:10px;
+}
+
+.admin-dash-list a {
+	
+	color:white;
+	text-decoration:none;
 }
 
 .admin-dash-list-ignore {
@@ -182,6 +187,16 @@ body {
 	color:white;
 }
 
+
+.inventory-table-data-col a {
+	text-decoration:none;
+	color:white;
+}
+
+inventory-table-data-col a:hover {
+	
+	opacity:10%;
+}
 
 .main-menu-list {
 	list-style-type: none;
