@@ -94,18 +94,19 @@ public class ItemDAOImpl implements ItemDAO {
 		finally {
 			closeConnection(con);
 		}
-		
-		
+
+
 		return resu;
 	}
 
 	/*
 	 * returns a list of products given the type of product a user is looking for
 	 */
-	public List<Item> getProductsByCategory(String productTypes) {
+	public List<Item> getProductsByCategory(String prodType) {
+
 		List<Item> resu = new ArrayList<Item>();
 
-		String query = "SELECT * FROM computer_store.item";
+		String query = "SELECT * FROM computer_store.item WHERE prodType='" + prodType + "'";
 
 		Connection con = null;
 		try {
@@ -146,8 +147,14 @@ public class ItemDAOImpl implements ItemDAO {
 			closeConnection(con);
 		}
 
+
 		return resu;
+
+
 	}
+
+
+
 
 	/*
 	 * Return all products within a price range
@@ -191,12 +198,12 @@ public class ItemDAOImpl implements ItemDAO {
 
 		return null;
 	}
-	
+
 	/*
 	 * Returns the products of a certain Brand
 	 */
 	public List<Item> getProductsByBrand(String brand) {
-		
+
 		List<Item> resu = new ArrayList<Item>();
 
 		String query = "SELECT * FROM computer_store.item WHERE brand='" + brand + "'";
@@ -239,18 +246,18 @@ public class ItemDAOImpl implements ItemDAO {
 		finally {
 			closeConnection(con);
 		}
-		
-		
+
+
 		return resu;
-		
-		
+
+
 	}
-	
-	
+
+
 	public List<String> getBrandNames() {
-		
+
 		List<String> brands = new ArrayList<String>();
-		
+
 		String query = "SELECT DISTINCT BRAND FROM computer_store.item";
 
 		Connection con = null;
@@ -259,19 +266,19 @@ public class ItemDAOImpl implements ItemDAO {
 			Statement stmt = con.createStatement();
 
 			ResultSet res = stmt.executeQuery(query);
-			
+
 			while(res.next()) {
 				brands.add(res.getString("brand"));
 			}
 
-			
-		
+
+
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			closeConnection(con);
 		}
-		
+
 		return brands;
 	}
 

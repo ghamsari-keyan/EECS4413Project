@@ -8,7 +8,7 @@ public interface ItemDAO {
 
 	 public List<Item> productList();
 	 
-	 public List<Item> getProductsByCategory(String productTypes);
+	 public List<Item> getProductsByCategory(String prodType);
 	 
 	 public List<Item> getProductsByPriceRange(int low, int high);
 	 
