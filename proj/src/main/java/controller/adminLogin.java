@@ -72,9 +72,15 @@ public class adminLogin extends HttpServlet {
         	
         	switch(action) {
         	
+        	case "home":
+        		url = url;
+        		break;
         	case "inventory":
         		getInventoryList(request, response);
         		url = base+"AdminInventory.jsp";
+        		break;
+        	case "addProduct":
+        		url=base+"addProduct.jsp";
         		break;
         	}
     	}
