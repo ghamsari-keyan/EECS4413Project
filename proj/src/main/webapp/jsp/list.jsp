@@ -26,7 +26,7 @@
 					<div class="prodIm"></div>
 						<p><span class="header-featured">${item.prodName}</span>				
 						<span class="info-featured"> ${item.prodInfo}</span>
-						<span class="info-featured">$${item.price}</span>
+						<span class="info-featured">${item.price}</span>
 					</p>
 					
 					<input class="featured-add-button" type="submit" value="ADD TO CART">

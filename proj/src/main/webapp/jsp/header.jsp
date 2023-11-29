@@ -13,6 +13,7 @@
        		<input id="submit" type="submit" value="Search" />
    		</form>
 	</li>
+	
 	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in-admin.html">ADMIN</a></li>
 	<li class="navLi"> | </li>
 	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in.html">SIGN IN</a></li>

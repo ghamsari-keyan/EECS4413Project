@@ -44,18 +44,19 @@
 		<div>
 		
 			<ul class="admin-dash">
-				<li class="admin-dash-list"><a class="admin-dash-list-link">INVENTORY</a></li>
+				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=inventory">INVENTORY</a></li>
 				<li class="admin-dash-list-ignore">|</li>
-				<li class="admin-dash-list"><a class="admin-dash-list-link">CUSTOMER INFO</a></li>
+				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=customer">CUSTOMER INFO</a></li>
 				<li class="admin-dash-list-ignore">|</li>
-				<li class="admin-dash-list"><a class="admin-dash-list-link">ORDER HISTORY</a></li>
+				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=orderHistory">ORDER HISTORY</a></li>
 				<li class="admin-dash-list-ignore">|</li>
-				<li class="admin-dash-list"><a class="admin-dash-list-link">MANAGEMENT</a></li>
+				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=management">MANAGEMENT</a></li>
 			</ul>
 		
 		</div>
 		
 	</div>
+	
 
 </body>
 </html>
