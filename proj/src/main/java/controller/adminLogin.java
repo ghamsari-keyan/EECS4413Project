@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,7 +53,7 @@ public class adminLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String base="/jsp";
+		String base="/jsp/";
 		String url = base + "AdminDashboard.jsp";
 		
 		String username = request.getParameter("username");
@@ -63,11 +64,33 @@ public class adminLogin extends HttpServlet {
         System.out.println(username);
         System.out.println(password);        
         
+        request.setAttribute("username", username);
+        request.setAttribute("password", password);
+        
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
+        
 	}
 	
-	
+	/*
+	 * System robustness: check if a user exists
+	 */
 	private void validateAdminLogin(HttpServletRequest request, HttpServletResponse response, String username, String password)
-		throws ServletException, IOException {
+			throws ServletException, IOException {
+		
+		int loginVer = adminDAO.adminExists(username, password);
+		
+		if(loginVer == 1) {
+			
+			
+		}
+		else if(loginVer == 2) {
+			
+		}
+		else if(loginVer == 3) {
+			
+			
+		}
 		
 		
 	}

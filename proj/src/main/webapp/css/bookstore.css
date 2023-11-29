@@ -43,6 +43,15 @@ body {
   	
 }
 
+.admin-dash-p {
+	
+	font-family:"Helvetica";
+	color:purple;
+	font-size:45px;
+	/* float:left; */
+
+}
+
 
 .big-par {
 	font-family:"Helvetica";
@@ -99,6 +108,53 @@ body {
 
 .navLi a:hover {
 	opacity:70%
+}
+
+
+
+.admin-dash {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:purple;
+	width: 100%;
+	
+	
+	
+}
+
+.admin-dash-list {
+	font-family:"HELVETICA";
+	font-size:25px;
+	color:white;
+	background:none;
+	display:block;
+	float:left;
+	padding:10px;
+}
+
+.admin-dash-list-ignore {
+	
+	font-size:25px;
+	color:white;
+	background:none;
+	display:block;
+	float:left;
+	padding:10px;
+}
+
+.admin-dash-list:hover {
+	background-color: white;
+}
+
+.admin-dash-list:hover a {
+	color:black;
+}
+
+.admin-dash-list-link {
+	width: 25%;
+	padding:10px;
 }
 
 

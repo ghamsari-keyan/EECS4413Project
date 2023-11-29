@@ -79,7 +79,7 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 		
 		
 		String usernameQuery = "SELECT * FROM computer_store.administrator where username='" + username + "'";
-		String passwordQuery = "SELECT * FROM computer_store.administrator where password='" + password + "'";
+		
 		
 		Connection con = null;
 		
@@ -88,20 +88,22 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 			Statement stmt = con.createStatement();
 			ResultSet res = stmt.executeQuery(usernameQuery);
 			
+			
+			// if there is no admin with the specified username
 			if (res == null) {
 				
 				return 1;
 			}
 			
-			res = stmt.executeQuery(passwordQuery);
 			String userPass = res.getString(password);
 			
-			
+			// correct username, wrong password
 			if (userPass.equals(password) == false) {
 				
 				return 2;
 			}
 			
+			// good login
 			return 3;
 			
 			
