@@ -18,7 +18,7 @@ import dao.ItemDAOImpl;
 /**
  * Servlet implementation class Category
  */
-@WebServlet("/Category")
+@WebServlet("/CategoryControl")
 public class CategoryControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

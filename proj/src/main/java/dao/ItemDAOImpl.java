@@ -249,8 +249,6 @@ public class ItemDAOImpl implements ItemDAO {
 
 
 		return resu;
-
-
 	}
 
 
@@ -280,6 +278,34 @@ public class ItemDAOImpl implements ItemDAO {
 		}
 
 		return brands;
+	}
+
+	@Override
+	public List<String> getCategoryNames() {
+		List<String> category = new ArrayList<String>();
+
+		String query = "SELECT DISTINCT PRODTYPE FROM computer_store.item";
+
+		Connection con = null;
+		try {
+			con = getConnection();
+			Statement stmt = con.createStatement();
+
+			ResultSet res = stmt.executeQuery(query);
+
+			while(res.next()) {
+				category.add(res.getString("prodType"));
+			}
+
+
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection(con);
+		}
+
+		return category;
 	}
 
 }

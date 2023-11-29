@@ -101,7 +101,7 @@
 		<div class="grid">
 			<c:forEach var="category" items="${catProds}">
 				<div class="brandCard">
-					<a href="Category?chooseCategory=${category}"><span class="header-featured"> ${category}</span></a>				
+					<a href="CategoryControl?chooseCategory=${category}"><span class="header-featured"> ${category}</span></a>				
 				</div>
 			
 				

@@ -62,8 +62,8 @@ public class Home extends HttpServlet {
 				url = base + "listOfBooks.jsp";
 				break;
 			case "category":
-				findBooksByCategory(request, response, category);
-				url = base + "category.jsp?category=" + category;
+				findProductsByCategory(request, response);
+				url = base + "category.jsp";
 				break;
 			/*
 			 * Implementing the sort by brand header
@@ -116,14 +116,14 @@ public class Home extends HttpServlet {
 	
 	
 	
-	private void findBooksByCategory(HttpServletRequest request, HttpServletResponse response, String category)
+	private void findProductsByCategory(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
 			// Calling DAO method to search books by category
 			
-			List<Item> prodList = itemDAO.getProductsByCategory(category);
+			List<String> prodList = itemDAO.getCategoryNames();
 			
-			request.setAttribute("categories", prodList);
+			request.setAttribute("catProds", prodList);
 
 		} catch (Exception e) {
 			System.out.println(e);
