@@ -58,6 +58,7 @@ FOREIGN KEY(itemId) REFERENCES item(itemId)
 
 create table administrator(
 adminId int not null,
+adminUser varchar(20) not null,
 admFirstName varchar(20) not null,
 admLastName varchar(20) not null,
 admAddrID int not null,

@@ -13,4 +13,6 @@ public interface AdministratorDAO {
 	public void removeAdmin();
 	
 	public void updateAdmin(int adminId);
+	
+	public int adminExists(String username, String password);
 }

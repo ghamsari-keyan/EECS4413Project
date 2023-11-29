@@ -51,23 +51,25 @@ public class adminLogin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		String base="/jsp";
+		String url = base + "AdminDashboard.jsp";
+		
 		String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         
+        
         System.out.println(username);
-        System.out.println(password);
+        System.out.println(password);        
         
-        
-        
-//        response.getWriter().println("Successfully logged in");
-
-        // Redirect to the home servlet
-//        response.sendRedirect(request.getContextPath() + "/books");
-        
-        
-        
-        
+	}
+	
+	
+	private void validateAdminLogin(HttpServletRequest request, HttpServletResponse response, String username, String password)
+		throws ServletException, IOException {
+		
+		
 	}
 
 }

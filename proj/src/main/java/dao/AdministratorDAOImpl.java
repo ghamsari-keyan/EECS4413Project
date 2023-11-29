@@ -1,7 +1,9 @@
 package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 import javax.servlet.ServletContext;
@@ -68,5 +70,49 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	 */
 	public void updateAdmin(int adminId) {
 		
+	}
+	
+	/*
+	 * Check if the person trying to login is using valid credentials
+	 */
+	public int adminExists(String username, String password) {
+		
+		
+		String usernameQuery = "SELECT * FROM computer_store.administrator where username='" + username + "'";
+		String passwordQuery = "SELECT * FROM computer_store.administrator where password='" + password + "'";
+		
+		Connection con = null;
+		
+		try {
+			con = getConnection();
+			Statement stmt = con.createStatement();
+			ResultSet res = stmt.executeQuery(usernameQuery);
+			
+			if (res == null) {
+				
+				return 1;
+			}
+			
+			res = stmt.executeQuery(passwordQuery);
+			String userPass = res.getString(password);
+			
+			
+			if (userPass.equals(password) == false) {
+				
+				return 2;
+			}
+			
+			return 3;
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			closeConnection(con);
+		}
+		
+		return 0;
 	}
 }
