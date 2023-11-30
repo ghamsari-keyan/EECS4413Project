@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <script src="js/jquery-1.9.1.js"></script>
 <link rel="stylesheet" href="css/bookstore.css" type="text/css" />
-<script src="js/bookstore.js"></script>
+<script src="js/bookstore.js"></script> 
 
 
 </head>
