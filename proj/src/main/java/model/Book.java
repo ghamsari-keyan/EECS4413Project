@@ -9,6 +9,7 @@ public class Book {
 	private List<Author> authors;
 	private Author author;
 	private String category;
+	private int orderedQty = 0;
 
 	public Long getId() {
 		return id;
@@ -59,6 +60,14 @@ public class Book {
 		this.category = long1;
 		
 	}
+	
+	public int getOrderedQty() {
+        return orderedQty;
+    }
+
+    public void setOrderedQty(int orderedQty) {
+        this.orderedQty = orderedQty;
+    }
 
 	public Author getAuthor() {
 		return author;

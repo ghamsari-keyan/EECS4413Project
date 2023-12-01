@@ -44,7 +44,7 @@
 						$500.00 CAD</span>
 					</p>
 					
-					<input class="featured-add-button" type="submit" value="ADD TO CART">
+					<a href="cartServlet?action=addToCart&itemId=${loop.index}" class="featured-add-button">ADD TO CART</a>
 				</div>
 			</c:forEach>
 		</div>

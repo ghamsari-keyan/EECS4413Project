@@ -14,7 +14,32 @@ public class Item {
 	private double prodVersion;
 	private String prodPlatform;
 	private int weight;
+	private int orderedQty;
 	
+	public Item(String itemId, String prodType,String prodName,
+		String prodInfo,
+		String brandName,
+		int quantityAvail,
+		double price,
+		double rating,
+		boolean ecoFriendly,
+		double prodVersion,
+		String prodPlatform,
+		int weight) {
+		
+		this.itemId = itemId;
+		this.prodType = prodType;
+		this.prodName = prodName;
+		this.prodInfo = prodInfo;
+		this.quantityAvail = quantityAvail;
+		this.price = price;
+		this.rating = rating;
+		this.ecoFriendly = ecoFriendly;
+		this.prodPlatform = prodPlatform;
+		this.weight = weight;
+		this.orderedQty = 0;
+		
+	}
 
 	/*
 	 * Getter and Setter Methods for attributes
@@ -91,6 +116,12 @@ public class Item {
 	}
 	public void setWeight(int weight) {
 		this.weight = weight;
+	}
+	public int getOrderedQty() {
+		return orderedQty;
+	}
+	public void setOrderedQty(int orderedQty) {
+		this.orderedQty = orderedQty;
 	}
 	
 	

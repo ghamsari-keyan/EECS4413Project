@@ -26,4 +26,6 @@ public interface ItemDAO {
 	 
 	 public List<String> getCategoryNames();
 
+	public Item getProductById(String itemId);
+
 }

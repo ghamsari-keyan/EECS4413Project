@@ -64,23 +64,32 @@ public class ItemDAOImpl implements ItemDAO {
 			ResultSet res = stmt.executeQuery(query);
 
 			while (res.next()) {
-				Item product = new Item();
+				Item product = new Item(res.getString("itemId"), res.getString("prodType"),
+						res.getString("prodName"),res.getString("prodInfo"),
+						res.getString("brand"),
+						res.getInt("quantity"),
+						res.getDouble("price"),
+						res.getDouble("rating"),
+						res.getBoolean("ecoFriendly"),
+						res.getDouble("prodVersion"),
+						res.getString("prodPlatform"),	
+						res.getInt("weight"));
 
 				/*
 				 * Retrieving all the information about a product 
 				 */
-				product.setItemId(res.getString("itemId"));
-				product.setProdName(res.getString("prodName"));
-				product.setProdVersion(res.getDouble("prodVersion"));
-				product.setProdPlatform(res.getString("prodPlatform"));
-				product.setProdType(res.getString("prodType"));
-				product.setProdInfo(res.getString("prodInfo"));
-				product.setBrandName(res.getString("brand"));
-				product.setQuantityAvail(res.getInt("quantity"));
-				product.setPrice(res.getDouble("price"));
-				product.setRating(res.getDouble("rating"));
-				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
-				product.setWeight(res.getInt("weight"));
+//				product.setItemId(res.getString("itemId"));
+//				product.setProdName(res.getString("prodName"));
+//				product.setProdVersion(res.getDouble("prodVersion"));
+//				product.setProdPlatform(res.getString("prodPlatform"));
+//				product.setProdType(res.getString("prodType"));
+//				product.setProdInfo(res.getString("prodInfo"));
+//				product.setBrandName(res.getString("brand"));
+//				product.setQuantityAvail(res.getInt("quantity"));
+//				product.setPrice(res.getDouble("price"));
+//				product.setRating(res.getDouble("rating"));
+//				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
+//				product.setWeight(res.getInt("weight"));
 
 				// now add the product to the list
 				resu.add(product);
@@ -116,23 +125,32 @@ public class ItemDAOImpl implements ItemDAO {
 			ResultSet res = stmt.executeQuery(query);
 
 			while (res.next()) {
-				Item product = new Item();
+				Item product = new Item(res.getString("itemId"), res.getString("prodType"),
+						res.getString("prodName"),res.getString("prodInfo"),
+						res.getString("brand"),
+						res.getInt("quantity"),
+						res.getDouble("price"),
+						res.getDouble("rating"),
+						res.getBoolean("ecoFriendly"),
+						res.getDouble("prodVersion"),
+						res.getString("prodPlatform"),	
+						res.getInt("weight"));
 
 				/*
 				 * Retrieving all the information about a product 
 				 */
-				product.setItemId(res.getString("itemId"));
-				product.setProdName(res.getString("prodName"));
-				product.setProdVersion(res.getDouble("prodVersion"));
-				product.setProdPlatform(res.getString("prodPlatform"));
-				product.setProdType(res.getString("prodType"));
-				product.setProdInfo(res.getString("prodInfo"));
-				product.setBrandName(res.getString("brand"));
-				product.setQuantityAvail(res.getInt("quantity"));
-				product.setPrice(res.getDouble("price"));
-				product.setRating(res.getDouble("rating"));
-				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
-				product.setWeight(res.getInt("weight"));
+//				product.setItemId(res.getString("itemId"));
+//				product.setProdName(res.getString("prodName"));
+//				product.setProdVersion(res.getDouble("prodVersion"));
+//				product.setProdPlatform(res.getString("prodPlatform"));
+//				product.setProdType(res.getString("prodType"));
+//				product.setProdInfo(res.getString("prodInfo"));
+//				product.setBrandName(res.getString("brand"));
+//				product.setQuantityAvail(res.getInt("quantity"));
+//				product.setPrice(res.getDouble("price"));
+//				product.setRating(res.getDouble("rating"));
+//				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
+//				product.setWeight(res.getInt("weight"));
 
 				// now add the product to the list
 				resu.add(product);
@@ -173,15 +191,27 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 
-	/*
-	 * Get a product by its id (for admin)
-	 */
-	public Item getProductById(int itemId) {
+ @Override
+    public Item getProductById(String itemId) {
+        Item product = null;
+        String query = "SELECT * FROM computer_store.item WHERE itemId = ?";
 
-		return null;
-	}
-
-
+        try (Connection con = getConnection(); PreparedStatement pstmt = con.prepareStatement(query)) {
+            pstmt.setString(1, itemId);
+            try (ResultSet res = pstmt.executeQuery()) {
+                if (res.next()) {
+                    product = new Item(res.getString("itemId"), res.getString("prodType"), res.getString("prodName"),
+                            res.getString("prodInfo"), res.getString("brand"), res.getInt("quantity"),
+                            res.getDouble("price"), res.getDouble("rating"), res.getBoolean("ecoFriendly"),
+                            res.getDouble("prodVersion"), res.getString("prodPlatform"), res.getInt("weight"));
+                    product.setOrderedQty(res.getInt("orderedQty"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return product;
+    }
 	/*
 	 * Get a product by name (for customers via search)
 	 */
@@ -216,23 +246,32 @@ public class ItemDAOImpl implements ItemDAO {
 			ResultSet res = stmt.executeQuery(query);
 
 			while (res.next()) {
-				Item product = new Item();
+				Item product = new Item(res.getString("itemId"), res.getString("prodType"),
+						res.getString("prodName"),res.getString("prodInfo"),
+						res.getString("brand"),
+						res.getInt("quantity"),
+						res.getDouble("price"),
+						res.getDouble("rating"),
+						res.getBoolean("ecoFriendly"),
+						res.getDouble("prodVersion"),
+						res.getString("prodPlatform"),	
+						res.getInt("weight"));
 
 				/*
 				 * Retrieving all the information about a product 
 				 */
-				product.setItemId(res.getString("itemId"));
-				product.setProdName(res.getString("prodName"));
-				product.setProdVersion(res.getDouble("prodVersion"));
-				product.setProdPlatform(res.getString("prodPlatform"));
-				product.setProdType(res.getString("prodType"));
-				product.setProdInfo(res.getString("prodInfo"));
-				product.setBrandName(res.getString("brand"));
-				product.setQuantityAvail(res.getInt("quantity"));
-				product.setPrice(res.getDouble("price"));
-				product.setRating(res.getDouble("rating"));
-				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
-				product.setWeight(res.getInt("weight"));
+//				product.setItemId(res.getString("itemId"));
+//				product.setProdName(res.getString("prodName"));
+//				product.setProdVersion(res.getDouble("prodVersion"));
+//				product.setProdPlatform(res.getString("prodPlatform"));
+//				product.setProdType(res.getString("prodType"));
+//				product.setProdInfo(res.getString("prodInfo"));
+//				product.setBrandName(res.getString("brand"));
+//				product.setQuantityAvail(res.getInt("quantity"));
+//				product.setPrice(res.getDouble("price"));
+//				product.setRating(res.getDouble("rating"));
+//				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
+//				product.setWeight(res.getInt("weight"));
 
 				// now add the product to the list
 				resu.add(product);
@@ -306,6 +345,12 @@ public class ItemDAOImpl implements ItemDAO {
 		}
 
 		return category;
+	}
+
+	@Override
+	public Item getProductById(int itemId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

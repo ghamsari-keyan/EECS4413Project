@@ -19,6 +19,10 @@
 	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in.html">SIGN IN</a></li>
 </ul>
 
+<ul class="nav_ul">
+    <li class="main-menu-list-link"><a href="${pageContext.request.contextPath}/cart.jsp?action=cart">SHOPPING CART</a></li>
+</ul>
+
 <%-- <div style="width:100%;display:table;border:1px solid white;">
 	<div style="dislpay:table-row;"> 
 		<div style="width:80%; display:table-cell; border:1px solid white;">
