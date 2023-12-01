@@ -25,6 +25,10 @@ public interface ItemDAO {
 	 public List<String> getBrandNames();
 	 
 	 public List<String> getCategoryNames();
+	 
+	 public boolean addProductToDatabase(String id, String name, String category, String brand, 
+				String info, int qty, double price, double rating, boolean eco, double version, String platform,
+				int weight);
 
 	public Item getProductById(String itemId);
 

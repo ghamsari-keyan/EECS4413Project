@@ -172,8 +172,6 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 
-
-
 	/*
 	 * Return all products within a price range
 	 */
@@ -346,6 +344,49 @@ public class ItemDAOImpl implements ItemDAO {
 
 		return category;
 	}
+	
+	
+	public boolean addProductToDatabase(String id, String name, String category, String brand, 
+	        String info, int qty, double price, double rating, boolean eco, double version, String platform,
+	        int weight) {
+	    
+	    String checkQuery = "SELECT * FROM computer_store.item WHERE itemId = ?"; 
+	    String addQuery = "INSERT INTO computer_store.item (itemId, prodType, prodName, prodInfo, brand, quantity, price, rating, ecoFriendly, prodVersion, prodPlatform, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+	    try (Connection con = getConnection();
+	         PreparedStatement checkStmt = con.prepareStatement(checkQuery);
+	         PreparedStatement addStmt = con.prepareStatement(addQuery)) {
+
+	        checkStmt.setString(1, id);
+	        ResultSet rs = checkStmt.executeQuery();
+	        
+	        if (!rs.next()) {
+	            addStmt.setString(1, id);
+	            addStmt.setString(2, category);
+	            addStmt.setString(3, name);
+	            addStmt.setString(4, info);
+	            addStmt.setString(5, brand);
+	            addStmt.setInt(6, qty);
+	            addStmt.setDouble(7, price);
+	            addStmt.setDouble(8, rating);
+	            addStmt.setBoolean(9, eco);
+	            addStmt.setDouble(10, version);
+	            addStmt.setString(11, platform);
+	            addStmt.setInt(12, weight);
+
+	            addStmt.executeUpdate();
+	            return true;
+	        } else {
+	            return false;
+	        }
+	        
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        // Consider re-throwing the exception or handling it appropriately
+	    }
+	    return false;
+	}
+
 
 	@Override
 	public Item getProductById(int itemId) {
