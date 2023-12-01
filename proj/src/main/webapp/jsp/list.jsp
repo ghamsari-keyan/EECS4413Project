@@ -9,40 +9,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript">
-        function ascendingPrice() {
-            var items = $(".card");
-            items.sort(function(a, b) {
-                var priceA = $(a).data("price");
-                var priceB = $(b).data("price");
-                return priceA - priceB;
-            });
-            $(".grid").html(items);
-        }
+	function ascendingPrice() {
+		var items = $(".card");
+		items.sort(function(a, b) {
+			var priceA = $(a).data("price");
+			var priceB = $(b).data("price");
+			return priceA - priceB;
+		});
+		$(".grid").html(items);
+	}
 
-        function descendingPrice() {
-            var items = $(".card");
-            items.sort(function(a, b) {
-                var priceA = $(a).data("price");
-                var priceB = $(b).data("price");
-                return priceB - priceA;
-            });
-            $(".grid").html(items);
-        }
+	function descendingPrice() {
+		var items = $(".card");
+		items.sort(function(a, b) {
+			var priceA = $(a).data("price");
+			var priceB = $(b).data("price");
+			return priceB - priceA;
+		});
+		$(".grid").html(items);
+	}
 
-        function alphabetical() {
-            var items = $(".card");
-            items.sort(function(a, b) {
-                var nameA = $(a).find(".header-featured").text().toUpperCase();
-                var nameB = $(b).find(".header-featured").text().toUpperCase();
-                return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
-            });
-            $(".grid").html(items);
-        }
-    </script>
+	function alphabetical() {
+		var items = $(".card");
+		items.sort(function(a, b) {
+			var nameA = $(a).find(".header-featured").text().toUpperCase();
+			var nameB = $(b).find(".header-featured").text().toUpperCase();
+			return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+		});
+		$(".grid").html(items);
+	}
+</script>
 </head>
 <body>
-
-
 	<div>
 		<c:if test="${param.category != null}">
 			<span class="label"> SHOP ALL</span>
