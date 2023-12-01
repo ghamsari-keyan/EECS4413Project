@@ -20,7 +20,7 @@
 </ul>
 
 <ul class="nav_ul">
-    <li class="main-menu-list-link"><a href="${pageContext.request.contextPath}/cart.jsp?action=cart">SHOPPING CART</a></li>
+    <li class="main-menu-list-link"><a href="${pageContext.request.contextPath}/jsp/cart.jsp?action=cart">SHOPPING CART</a></li>
 </ul>
 
 <%-- <div style="width:100%;display:table;border:1px solid white;">
