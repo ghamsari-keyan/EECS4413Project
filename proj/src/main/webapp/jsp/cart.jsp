@@ -11,16 +11,22 @@
     <link rel="stylesheet" href="css/bookstore.css" type="text/css" />
     <script src="js/bookstore.js"></script>
     <title>Shopping Cart</title>
+    <style>
+        body {
+        	background-color: black;
+            color: white; /* Set the default text color to white */
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Shopping Cart</h1>
+    <jsp:useBean id="cart" class="model.Cart" scope="session" />
 
     <%
-        Cart cart = (Cart) session.getAttribute("cart");
-        List<Item> cartItems = cart.getItems();
+        List<Item> cartItems = cart != null ? cart.getItems() : null;
     %>
 
-    <% if (cart.isEmpty()) { %>
+    <% if (cartItems == null || cartItems.isEmpty()) { %>
         <p>Shopping cart is empty</p>
     <% } else { %>
         <table>

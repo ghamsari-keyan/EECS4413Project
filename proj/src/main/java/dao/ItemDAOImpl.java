@@ -204,6 +204,7 @@ public class ItemDAOImpl implements ItemDAO {
                             res.getDouble("prodVersion"), res.getString("prodPlatform"), res.getInt("weight"));
                     product.setOrderedQty(res.getInt("orderedQty"));
                 }
+                
             }
         } catch (SQLException e) {
             e.printStackTrace();

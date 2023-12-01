@@ -47,7 +47,13 @@
 						$500.00 CAD</span>
 					</p>
 					
-					<a href="cartServlet?action=addToCart&itemId=${loop.index}" class="featured-add-button">ADD TO CART</a>
+					 <form action="<%= request.getContextPath() %>/cartServlet" method="get">
+                    <input type="hidden" name="action" value="addToCart">
+                    <input type="hidden" name="itemId" value="${loop.index}">
+                    <input type="submit" value="ADD TO CART" class="featured-add-button">
+                	</form>
+					
+			
 				</div>
 			</c:forEach>
 		</div>
