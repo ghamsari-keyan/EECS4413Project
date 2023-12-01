@@ -35,8 +35,11 @@
 		<!-- now we can display some featured products. We can order them according to some 
 		specification -->
 		
+		
+		
+		
 		<div class="grid">
-			<c:forEach begin="0" end="7" varStatus="loop">
+			<c:forEach begin="1" end="8" varStatus="loop">
 				<div class="card">
 					<div class="prodIm"></div>
 						<p><span class="header-featured">PRODUCT ${loop.index}</span>				
