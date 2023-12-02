@@ -47,9 +47,9 @@
 			<span class="label"> SHOP ALL</span>
 		</c:if>
 	</div>
-	<br>
+	<br><br><br><br>
 
-	<div>
+	<div style="float: centre; margin-right: 10px;">		
 		<button onclick="alphabetical()">Sort Products Alphabetically</button>
 		<button onclick="ascendingPrice()">Sort Products by Ascending Price</button>
 		<button onclick="descendingPrice()">Sort Products by Descending Price</button>
@@ -63,7 +63,7 @@
 				<p>
 					<span class="header-featured">${item.prodName}</span> 
 					<span class="info-featured"> ${item.prodInfo}</span> 
-					<span class="info-featured">$${item.price}</span> 
+					<span class="info-featured">Price: $${item.price}</span> 
 					<span class="info-featured">Quantity remaining: ${item.quantityAvail}</span>
 
 				</p>
