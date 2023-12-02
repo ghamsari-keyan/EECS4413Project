@@ -47,7 +47,7 @@
 						$500.00 CAD</span>
 					</p>
 					
-					 <form action="<%= request.getContextPath() %>/cartServlet" method="get">
+					 <form action="<%= request.getContextPath() %>/cartServlet" method="post">
                     <input type="hidden" name="action" value="addToCart">
                     <input type="hidden" name="itemId" value="${loop.index}">
                     <input type="submit" value="ADD TO CART" class="featured-add-button">

@@ -72,8 +72,8 @@ public class Cart {
 	 
 	   // Check if this cartServlet is empty
 	   public boolean isEmpty() {
-	      return size() == 0;
-	   }
+		    return cart.isEmpty();
+		}
 	 
 	   // Return all the item in a List<Item>
 	   public List<Item> getItems() {
@@ -84,6 +84,14 @@ public class Cart {
 	   public void clear() {
 	      cart.clear();
 	   }
+	   
+	   public double calculateTotal() {
+	        double total = 0;
+	        for (Item item : cart) {
+	            total += item.getPrice() * item.getOrderedQty();
+	        }
+	        return total;
+	    }
 
 
 }

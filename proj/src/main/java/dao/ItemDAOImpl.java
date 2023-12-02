@@ -198,6 +198,11 @@ public class ItemDAOImpl implements ItemDAO {
             pstmt.setString(1, itemId);
             try (ResultSet res = pstmt.executeQuery()) {
                 if (res.next()) {
+                	// Log the retrieved values
+                    System.out.println("Retrieved values from the database:");
+                    System.out.println("itemId: " + res.getString("itemId"));
+                    System.out.println("prodType: " + res.getString("prodType"));
+                    // ... log other fields ...
                     product = new Item(res.getString("itemId"), res.getString("prodType"), res.getString("prodName"),
                             res.getString("prodInfo"), res.getString("brand"), res.getInt("quantity"),
                             res.getDouble("price"), res.getDouble("rating"), res.getBoolean("ecoFriendly"),

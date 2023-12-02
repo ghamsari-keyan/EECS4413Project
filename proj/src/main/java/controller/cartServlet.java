@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.io.IOException;
 
 import javax.servlet.ServletConfig;
@@ -84,18 +85,29 @@ public class cartServlet extends HttpServlet {
             try {
                 int qtyOrdered = Integer.parseInt(qtyOrderedStr);
 
-                Item item = dao.getProductById(itemIdStr);
+                List<Item> items = new ArrayList<Item>();
+                
+                items = dao.productList();
+                
+                for(int i = 0; i < items.size(); i++) {
+                	if(items.get(i).getItemId().equals(itemIdStr)) {
+                		Item item = items.get(i);
+                        System.out.println(item.getItemId() + item.getProdType() + item.getProdName() + item.getProdInfo()+
+                              item.getBrandName() + item.getQuantityAvail() + item.getPrice() + item.getRating() +
+                              item.isEcoFriendly() + item.getProdVersion() + item.getProdPlatform() + item.getWeight() +
+                              qtyOrdered);
 
-                if (item != null && qtyOrdered > 0 /*&& qtyOrdered <= item.getQuantityAvail()*/) {
-                    System.out.println(item.getItemId() + item.getProdType() + item.getProdName() + item.getProdInfo()+
-                            item.getBrandName() + item.getQuantityAvail() + item.getPrice() + item.getRating() +
-                            item.isEcoFriendly() + item.getProdVersion() + item.getProdPlatform() + item.getWeight() +
-                            qtyOrdered);
-                	cart.add(item.getItemId(), item.getProdType(), item.getProdName(), item.getProdInfo(),
-                            item.getBrandName(), item.getQuantityAvail(), item.getPrice(), item.getRating(),
-                            item.isEcoFriendly(), item.getProdVersion(), item.getProdPlatform(), item.getWeight(),
-                            qtyOrdered);
+                		cart.add(item.getItemId(), item.getProdType(), item.getProdName(), item.getProdInfo(),
+                                item.getBrandName(), item.getQuantityAvail(), item.getPrice(), item.getRating(),
+                                item.isEcoFriendly(), item.getProdVersion(), item.getProdPlatform(), item.getWeight(),
+                                qtyOrdered);
+                		
+                		return;
+                	}
                 }
+                
+
+                
             } catch (NumberFormatException e) {
                 // Handle the case where itemIdStr or qtyOrderedStr is not a valid integer
                 // Log the error or provide feedback to the user
