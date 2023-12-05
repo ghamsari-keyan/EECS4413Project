@@ -10,12 +10,5 @@
 	to a MySQL database done using the MySQL JDBC driver.</p>
 	
 	<p> Tarun, Keyan, Nikhil - 2023</p>  
-	
-	
-	<ul class="footer-ul">
-		<li class="search-bar"><a>TEST1</a>
-		<li class="search-bar"><a>TEST1</a>
-		<li class="search-bar"><a>TEST1</a>
-		<li class="search-bar"><a>TEST1</a>
-	</ul>
+	<br>
 </div>

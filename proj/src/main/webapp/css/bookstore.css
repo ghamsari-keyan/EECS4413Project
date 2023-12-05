@@ -102,6 +102,11 @@ body {
 	
 }
 
+
+
+
+
+
 #text {
 	width: 800px;
 }
@@ -350,10 +355,36 @@ table tr td,th {
 	
 }
 
+.featured-add-button-admin{
+	width:50%;
+	
+	background-color:white;
+	font-family:"Helvetica";
+	font-size:16px;
+	border:1px solid white;
+}
+
+.featured-add-button-admin:hover{
+	background-color:black;
+	color:white;
+}
+
 .featured-add-button:hover {
 	background-color:black;
 	color:white;	
 	
+}
+
+.add-product {
+	
+	border: 1px solid white;
+	color:black;
+	font-family:"Helvetica";
+}
+
+
+.add-product input {
+	width:100%
 }
 
 .header-featured {

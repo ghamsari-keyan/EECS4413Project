@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.AdministratorDAO;
 import dao.AdministratorDAOImpl;
+import dao.CustomerDAO;
+import dao.CustomerDAOImpl;
 import dao.ItemDAO;
 import dao.ItemDAOImpl;
+import model.Customer;
 import model.Item;
 
 /**
@@ -27,6 +30,7 @@ public class adminLogin extends HttpServlet {
 	
 	private AdministratorDAO adminDAO;
 	private ItemDAO itemDAO;
+	private CustomerDAO customerDAO;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,6 +47,7 @@ public class adminLogin extends HttpServlet {
     	
     	adminDAO = new AdministratorDAOImpl(getServletContext());
     	itemDAO = new ItemDAOImpl(getServletContext());
+    	customerDAO = new CustomerDAOImpl(getServletContext());
     }
 
 	/**
@@ -79,6 +84,10 @@ public class adminLogin extends HttpServlet {
         		getInventoryList(request, response);
         		url = base+"AdminInventory.jsp";
         		break;
+        	case "customer":
+        		getCustomerList(request, response);
+        		url=base + "customerView.jsp";
+        		break;
         	case "addProduct":
         		url=base+"addProduct.jsp";
 //        		addProduct(request, response);
@@ -91,11 +100,6 @@ public class adminLogin extends HttpServlet {
         	}
         	
     	}
-        
-        
-        
-        System.out.println(username);
-        System.out.println(password);        
         
         request.setAttribute("username", username);
         request.setAttribute("password", password);
@@ -175,8 +179,6 @@ public class adminLogin extends HttpServlet {
 		
 		try {
 			
-			System.out.println("got to getInv");
-			
 			// Calling DAO method to retrieve a list of all books
 			
 			List<Item> inventory = itemDAO.productList();
@@ -187,6 +189,18 @@ public class adminLogin extends HttpServlet {
 			System.out.println(e);
 		}
 		
+	}
+	
+	private void getCustomerList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		try {
+			List<Customer> customers = customerDAO.getCustomerList();
+			
+			request.setAttribute("customerList", customers);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 		
 		
