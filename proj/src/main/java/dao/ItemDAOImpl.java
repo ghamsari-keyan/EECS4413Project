@@ -400,4 +400,33 @@ public class ItemDAOImpl implements ItemDAO {
 		return null;
 	}
 
+	@Override
+	public List<Item> searchProducts(String keyword) {
+		List<Item> searchResults = new ArrayList<>();
+        String query = "SELECT * FROM item WHERE prodName LIKE ? OR prodInfo LIKE ? OR brand LIKE ?";
+        
+        try (Connection con = getConnection(); 
+             PreparedStatement pstmt = con.prepareStatement(query)) {
+            pstmt.setString(1, "%" + keyword + "%");
+            pstmt.setString(2, "%" + keyword + "%");
+            pstmt.setString(3, "%" + keyword + "%");
+
+            try (ResultSet res = pstmt.executeQuery()) {
+                while (res.next()) {
+                    Item product = new Item(res.getString("itemId"), res.getString("prodType"),
+                            res.getString("prodName"), res.getString("prodInfo"), res.getString("brand"),
+                            res.getInt("quantity"), res.getDouble("price"), res.getDouble("rating"),
+                            res.getBoolean("ecoFriendly"), res.getDouble("prodVersion"),
+                            res.getString("prodPlatform"), res.getInt("weight"));
+                    searchResults.add(product);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return searchResults;
+    }
+	
+
 }

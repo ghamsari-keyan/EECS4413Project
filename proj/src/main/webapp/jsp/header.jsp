@@ -7,7 +7,7 @@
 <ul class="nav_ul">
 	<li class="nav-companyName"><a><b>CPU4U.com</b></a></li>
 	<li class="search-bar">
-		<form class="search">
+        <form class="search" action="${pageContext.request.contextPath}/jsp/searchResult.jsp" method="get">
 			<input type="hidden" name="action" value="search"/> 
 			<input id="text" type="text" name="keyWord" size="12" placeholder="Search Store by Product ID, name, category, brand, etc" />
        		<input id="submit" type="submit" value="Search" />

@@ -31,5 +31,8 @@ public interface ItemDAO {
 				int weight);
 
 	public Item getProductById(String itemId);
+	
+    public List<Item> searchProducts(String keyword);
+
 
 }
