@@ -344,35 +344,44 @@ table tr td,th {
 }
 
 .featured-add-button {
-
-	margin-top: 10px;
-	width:80%;
-	background-color:white;
-	font-family:"Helvetica";
-	font-size:16px;
-	border:1px solid white;
-	float:left;
-	
-}
-
-.featured-add-button-admin{
-	width:50%;
-	
-	background-color:white;
-	font-family:"Helvetica";
-	font-size:16px;
-	border:1px solid white;
-}
-
-.featured-add-button-admin:hover{
-	background-color:black;
-	color:white;
+    margin-top: 10px;
+    width: 80%;
+    background-color: white;
+    font-family: "Helvetica";
+    font-size: 16px;
+    border: 1px solid white;
+    float: left;
 }
 
 .featured-add-button:hover {
-	background-color:black;
-	color:white;	
-	
+    background-color: black;
+    color: white;
+}
+
+.featured-add-button-admin {
+    width: 50%;
+    background-color: white;
+    font-family: "Helvetica";
+    font-size: 16px;
+    border: 1px solid white;
+}
+
+.featured-add-button-admin:hover {
+    background-color: black;
+    color: white;
+}
+
+.back-button {
+    width: 50%;
+    background-color: white;
+    font-family: "Helvetica";
+    font-size: 16px;
+    border: 1px solid white;
+}
+
+.back-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .add-product {
