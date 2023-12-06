@@ -4,9 +4,9 @@
     <title>Admin Login</title>
     <link rel="stylesheet" href="css/bookstore.css" type="text/css" />
 </head>
-<body style="text-align: center;background-color:black">
-    <div style="margin: auto; width: 50%;">
-        <h2 class="big-par" style="align-self:center">Admin Login</h2>
+<body style="align-content:center;background-color:black">
+
+        <h2 class="big-par" style="margin-left:44%">Admin Login</h2>
         
         
         <br>
@@ -25,18 +25,21 @@
         <br>
         <br>
         <br>
-        
-        <div style="display:block;width:500px;border:1px solid white;padding:20p;height:300px">
+
+        <div style="margin-left:40%;display:block;width:500px;border:2px solid white;padding:20px;height:300px">
         
 	        <form action="adminLogin" method="post">
 	        
-	           <p><span class="info-par">USERNAME</span></p> <input style="width:90%" type="text" name="username" required><br>
-	           <p><span class="info-par">PASSWORD</span></p><input style="width:90%" type="password" name="password" required><br>
+	           <p><span class="info-par">USERNAME</span></p> <input style="width:100%;padding:0" type="text" name="username" required><br>
+	           <p><span class="info-par">PASSWORD</span></p><input style="width:100%;padding:0" type="password" name="password" required><br>
 	           <br>
 	           <br>
 	           <input type="submit" value="Sign In" class="featured-add-button-admin">
 	           
 	        </form>
+	        
+        
+	        <br>
 	        
 	        <form action="http://localhost:8080/proj/books" method="post" >
 	            <input type="submit" value="Back" class="featured-add-button-admin">
@@ -44,6 +47,6 @@
         
         </div>
 
-    </div>
+    
 </body>
 </html>
