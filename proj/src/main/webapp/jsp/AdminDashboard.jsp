@@ -35,7 +35,7 @@
 		</div>
 		
 		<div>			
-			<span class="big-par">Welcome, ${username} </span>
+			<span class="big-par">Welcome, ${sessionScope.name} </span>
 		</div>
 		<br>
 		<br>

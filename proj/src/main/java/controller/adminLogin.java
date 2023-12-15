@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.AdministratorDAO;
 import dao.AdministratorDAOImpl;
@@ -64,19 +65,20 @@ public class adminLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		HttpSession sesh = request.getSession();
 		String base="/jsp/";
 		String url = base + "AdminDashboard.jsp";
-		
-		String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
         
         String action=request.getParameter("action");
         
         if (action!=null) {
         	
         	switch(action) {
-        	
+        	case "login":
+        		String username = request.getParameter("username");
+        		String password = request.getParameter("password");
+        		sesh.setAttribute("name", username);
+        		
         	case "home":
         		url = url;
         		break;
@@ -101,8 +103,8 @@ public class adminLogin extends HttpServlet {
         	
     	}
         
-        request.setAttribute("username", username);
-        request.setAttribute("password", password);
+//        request.setAttribute("username", username);
+//        request.setAttribute("password", password);
         
         RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
