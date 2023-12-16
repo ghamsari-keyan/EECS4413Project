@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import = "java.io.*, java.util.*" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%request.getProtocol();%>
+<%@ page import="java.io.*, java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%
+List<String> imageUrls = new ArrayList<>();
+imageUrls.add("images/laptop.png");
+imageUrls.add("images/desktop.png");
+imageUrls.add("images/monitor.png");
+imageUrls.add("images/keyboard.png");
+imageUrls.add("images/mouse2.png");
+imageUrls.add("images/headphones.png");
+imageUrls.add("images/speaker.png");
+imageUrls.add("images/tablet.png");
+
+
+request.setAttribute("imageUrls", imageUrls);
+%>
 <!DOCTYPE html >
 
- 
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,55 +30,49 @@
 </head>
 <body>
 	<div id="centered">
-	
-		<div>		
+
+		<div>
 			<jsp:include page="header.jsp" flush="true" />
 		</div>
-		
-		<div>		
+
+		<div>
 			<jsp:include page="leftColumn.jsp" flush="true" />
 		</div>
-		<br>
-		<br>
-		<span class="big-par">Featured Products, on-sale Limited Offers!</span>
-		
-		<br>
-		<br>
-		
+		<br> <br> <span class="big-par">Featured Products,
+			on-sale Limited Offers!</span> <br> <br>
+
 		<!-- now we can display some featured products. We can order them according to some 
 		specification -->
-		
-		
-		
-		
+
 		<div class="grid">
-			<c:forEach begin="1" end="8" varStatus="loop">
+			<c:forEach var="imageUrl" items="${imageUrls}" varStatus="loop">
 				<div class="card">
-					<div class="prodIm"></div>
-						<p><span class="header-featured">PRODUCT ${loop.index}</span>				
-						<span class="info-featured"> This is a little information about the product
-						$500.00 CAD</span>
+					<div class="prodIm">
+						<img src="${imageUrl}" alt="Product Image ${loop.index + 1}" />
+					</div>
+					<p>
+						<span class="header-featured">PRODUCT ${loop.index + 1}</span> <span
+							class="info-featured"> This is a little information about
+							the product $500.00 CAD</span>
 					</p>
-					
-					 <form action="<%= request.getContextPath() %>/cartServlet" method="post">
-                    <input type="hidden" name="action" value="addToCart">
-                    <input type="hidden" name="itemId" value="${loop.index}">
-                    <input type="submit" value="ADD TO CART" class="featured-add-button">
-                	</form>
-					
-			
+					<form action="<%= request.getContextPath() %>/cartServlet"
+						method="post">
+						<input type="hidden" name="action" value="addToCart"> <input
+							type="hidden" name="itemId" value="${loop.index + 1}"> <input
+							type="submit" value="ADD TO CART" class="featured-add-button">
+					</form>
 				</div>
 			</c:forEach>
+
+
 		</div>
-		
-		<br>
-		<br>
-		<br>
+
+		<br> <br> <br>
 		<div>
 			<jsp:include page="footer.jsp" flush="true" />
 		</div>
-		
-		
+
+
 		<%-- <table>
 			<tr>
 				<td><span class="tooltip_img1"><img
