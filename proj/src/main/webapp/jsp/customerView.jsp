@@ -21,11 +21,7 @@
 		<div>
 			<jsp:include page="AdminDashboard.jsp" flush="true"/>
 		</div>
-		<div>
-Z			<ul class="admin-dash" style="width:fit-content">
-				<li class="admin-dash-list" style="padding:0;border:1px solid white"><a class="admin-dash-list-link" style="font-size:14px" href="adminLogin?action=addProduct">Add Product</a></li>
-			</ul>
-		</div>
+		
 		<table class="inventory-table">
 			<tr class="inventory-table-heading">
 				<td class="inventory-table-heading-col">CUST. ID</td>
