@@ -86,7 +86,7 @@ request.setAttribute("imageUrls", imageUrls);
         <c:forEach var="item" items="${inventory}" varStatus="loop">
             <div class="card" data-price="${item.price}">
                 <div class="prodIm">
-                    <img src="${imageUrls[loop.index % imageUrls.size()]}" alt="Product Image ${loop.index + 1}" />
+                    <img src="${imageUrls[loop.index]}" alt="Product Image ${loop.index}" />
                 </div>
                 <p>
                     <span class="header-featured">${item.prodName}</span> 

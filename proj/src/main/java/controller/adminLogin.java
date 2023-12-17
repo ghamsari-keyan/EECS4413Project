@@ -198,7 +198,7 @@ public class adminLogin extends HttpServlet {
 		try {
 			List<Customer> customers = customerDAO.getCustomerList();
 			
-			request.setAttribute("customerList", customers);
+			request.setAttribute("customers", customers);
 			
 		} catch (Exception e) {
 			System.out.println(e);
