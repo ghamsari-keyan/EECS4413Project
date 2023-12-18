@@ -67,7 +67,10 @@ public class Brand extends HttpServlet {
 		if (action != null) {
 			
 			findProductsByBrand(request, response, action);
-			
+		
+			Map<String, String> brandURL = url(request);
+            request.setAttribute("url", brandURL);
+     
 		}
 		
 		System.out.println(action);
@@ -93,6 +96,26 @@ public class Brand extends HttpServlet {
 		}
 	}
 	
-	
+	private Map<String, String> url(HttpServletRequest request) {
+	    Map<String, String> url = new HashMap<>();
+	    String contextPath = request.getContextPath();
 
+	    url.put("BrandA", contextPath + "/images/Laptop.png");
+	    url.put("BrandB", contextPath + "/images/Desktop.png");
+	    url.put("BrandC", contextPath + "/images/Monitor.png");
+	    url.put("BrandD", contextPath + "/images/Keyboard.png");
+	    url.put("BrandE", contextPath + "/images/Mouse2.png");
+	    url.put("BrandF", contextPath + "/images/Headphones.png");
+	    url.put("BrandG", contextPath + "/images/Speaker.png");
+	    url.put("BrandH", contextPath + "/images/Tablet.png");
+	    url.put("BrandI", contextPath + "/images/Router.png");
+	    url.put("BrandJ", contextPath + "/images/Printer.png");
+	    url.put("BrandK", contextPath + "/images/Scanner.png");
+	    url.put("BrandL", contextPath + "/images/Webcam.png");
+	    url.put("BrandM", contextPath + "/images/External Drive.png");
+	    url.put("BrandN", contextPath + "/images/Graphics Card.png");
+	    url.put("BrandO", contextPath + "/images/RAM.png");
+
+	    return url;
+	}
 }

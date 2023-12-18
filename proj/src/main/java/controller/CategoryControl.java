@@ -65,6 +65,9 @@ public class CategoryControl extends HttpServlet {
 
 			findProductsByCategory(request, response, action);
 
+			Map<String, String> catURL = url(request);
+			request.setAttribute("url", catURL);
+       
 		}
 
 		System.out.println(action);
@@ -89,7 +92,26 @@ public class CategoryControl extends HttpServlet {
 			System.out.println(e);
 		}
 	}
+	
+	private Map<String, String> url(HttpServletRequest request) {
+	    Map<String, String> url = new HashMap<>();
+	    String contextPath = request.getContextPath();
+	    url.put("Laptop", contextPath + "/images/Laptop.png");
+        url.put("Desktop", contextPath + "/images/Desktop.png");
+        url.put("Monitor", contextPath + "/images/Monitor.png");
+        url.put("Keyboard", contextPath + "/images/Keyboard.png");
+        url.put("Mouse", contextPath + "/images/Mouse2.png");
+        url.put("Headphones", contextPath + "/images/Headphones.png");
+        url.put("Speaker", contextPath + "/images/Speaker.png");
+        url.put("Tablet", contextPath + "/images/Tablet.png");
+        url.put("Router", contextPath + "/images/Router.png");
+        url.put("Printer", contextPath + "/images/Printer.png");
+        url.put("Scanner", contextPath + "/images/Scanner.png");
+        url.put("Webcam", contextPath + "/images/Webcam.png");
+        url.put("External Drive", contextPath + "/images/External Drive.png");
+        url.put("Graphics Card", contextPath + "/images/Graphics Card.png");
+        url.put("RAM", contextPath + "/images/RAM.png");
 
-
-
+        return url;
+    }
 }
