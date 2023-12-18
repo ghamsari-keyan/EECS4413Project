@@ -32,22 +32,22 @@
 					<div class="latest-prods">
 						<p class="latest-p">New Additions</p>
 						<div class="latest-prod-additions">
-							<p class="latest-prod-additions-info"><b>${inventory[0].prodName}</b></p>
-							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)"><b>${inventory[0].brandName}</b></span></p>
+							<p class="latest-prod-additions-info"><span style="text-transform:uppercase"><b>${inventory[0].prodName}</b></span></p>
+							<p class="latest-prod-additions-info"><span style="color: black"><b>${inventory[0].brandName}</b></span></p>
 							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)"><i>Qty Added: </i>${inventory[0].quantityAvail}</span></p>
 							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)">*Date Added*</span></p>
 						</div>				
 						<br>
 						<div class="latest-prod-additions">
-							<p class="latest-prod-additions-info"><b>${inventory[1].prodName}</b></p>
-							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)"><b>${inventory[1].brandName}</b></span></p>
+							<p class="latest-prod-additions-info"><span style="text-transform:uppercase"><b>${inventory[1].prodName}</b></span></p>
+							<p class="latest-prod-additions-info"><span style="color: black"><b>${inventory[1].brandName}</b></span></p>
 							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)"><i>Qty Added: </i>${inventory[1].quantityAvail}</span></p>
 							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)">*Date Added*</span></p>
 						</div>
 						<br>
 						<div class="latest-prod-additions">
-							<p class="latest-prod-additions-info"><b>${inventory[2].prodName}</b></p>
-							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)"><b>${inventory[2].brandName}</b></span></p>
+							<p class="latest-prod-additions-info"><span style="text-transform:uppercase"><b>${inventory[2].prodName}</b></span></p>
+							<p class="latest-prod-additions-info"><span style="color: black"><b>${inventory[2].brandName}</b></span></p>
 							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)"><i>Qty Added: </i>${inventory[2].quantityAvail}</span></p>
 							<p class="latest-prod-additions-info"><span style="color: rgb(48, 25, 52)">*Date Added*</span></p>
 						</div>						
