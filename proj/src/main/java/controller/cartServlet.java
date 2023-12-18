@@ -1,45 +1,33 @@
 package controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
-
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.RequestDispatcher;
+import javax.servlet.http.*;
+import java.io.IOException;
+import java.util.List;
 
+import model.Cart;
+import model.Item;
+import dao.ItemDAOImpl;
 
-import model.*;
-import dao.*;
-
-/**
- * Servlet implementation class cartServlet
- */
 @WebServlet("/cartServlet")
 public class cartServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    private ItemDAO dao;
+    private ItemDAOImpl itemDao;
 
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-
-        dao = new ItemDAOImpl(getServletContext());
+        itemDao = new ItemDAOImpl(getServletContext());
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Cart cart = (Cart) session.getAttribute("cart");
 
@@ -51,86 +39,56 @@ public class cartServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if (action != null) {
+            String itemId = request.getParameter("itemId");
             switch (action) {
                 case "addToCart":
-                    addToCart(request, cart);
+                    try {
+                    	System.out.println("add to cart");
+                        int quantity = Integer.parseInt(request.getParameter("quantity"));
+                        Item item = itemDao.getProductById(itemId);
+                        System.out.println(itemId);
+                        if (item == null) {
+                            response.setContentType("application/json");
+                            response.setCharacterEncoding("UTF-8");
+                            response.getWriter().write("{\"status\":\"error\", \"message\":\"Item not found\"}");
+                            return;
+                        }
+                        cart.addItem(item, quantity);
+                        
+                    } catch (NumberFormatException e) {
+                        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid quantity format");
+                        return;
+                    } catch (IllegalArgumentException e) {
+                        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid item");
+                        return;
+                    }
                     break;
-                case "updateCart":
-                    updateCart(request, cart);
+                case "remove":
+                    cart.removeItem(itemId);
                     break;
-                case "removeFromCart":
-                    removeFromCart(request, cart);
+                case "update":
+                    try {
+                        int newQuantity = Integer.parseInt(request.getParameter("newQuantity"));
+                        cart.updateItem(itemId, newQuantity);
+                    } catch (NumberFormatException e) {
+                        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid quantity format");
+                        return;
+                    }
                     break;
             }
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/cart.jsp");
-        dispatcher.forward(request, response);
-
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
-
-    private void addToCart(HttpServletRequest request, Cart cart) {
-    	System.out.println("addToCart method invoked");
-	    String itemIdStr = request.getParameter("itemId");
-	    String qtyOrderedStr = "1";
-	    System.out.println("itemIdStr: " + itemIdStr + ", qtyOrderedStr: " + qtyOrderedStr);
-        // Check if itemIdStr and qtyOrderedStr are not null or empty
-	    //Item is null for some reason.
-        if (itemIdStr != null && !itemIdStr.isEmpty() && qtyOrderedStr != null && !qtyOrderedStr.isEmpty()) {
-            try {
-                int qtyOrdered = Integer.parseInt(qtyOrderedStr);
-
-                List<Item> items = new ArrayList<Item>();
-                
-                items = dao.productList();
-                
-                for(int i = 0; i < items.size(); i++) {
-                	if(items.get(i).getItemId().equals(itemIdStr)) {
-                		Item item = items.get(i);
-                        System.out.println(item.getItemId() + item.getProdType() + item.getProdName() + item.getProdInfo()+
-                              item.getBrandName() + item.getQuantityAvail() + item.getPrice() + item.getRating() +
-                              item.isEcoFriendly() + item.getProdVersion() + item.getProdPlatform() + item.getWeight() +
-                              qtyOrdered);
-
-                		cart.add(item.getItemId(), item.getProdType(), item.getProdName(), item.getProdInfo(),
-                                item.getBrandName(), item.getQuantityAvail(), item.getPrice(), item.getRating(),
-                                item.isEcoFriendly(), item.getProdVersion(), item.getProdPlatform(), item.getWeight(),
-                                qtyOrdered);
-                		
-                		return;
-                	}
-                }
-                
-
-                
-            } catch (NumberFormatException e) {
-                // Handle the case where itemIdStr or qtyOrderedStr is not a valid integer
-                // Log the error or provide feedback to the user
-                e.printStackTrace(); // This prints the exception details to the console
-            }
+        if ("XMLHttpRequest".equals(request.getHeader("X-Requested-With"))) {
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            String jsonResponse = "{\"status\":\"success\", \"totalPrice\":" + cart.calculateTotal() + "}";
+            response.getWriter().write(jsonResponse);
+        } else {
+            String nextJSP = "/jsp/cart.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            dispatcher.forward(request, response);
         }
     }
-
-
-
-    private void updateCart(HttpServletRequest request, Cart cart) {
-        String itemId = request.getParameter("itemId");
-        int newQty = Integer.parseInt(request.getParameter("newQty"));
-
-        Item item = dao.getProductById(itemId);
-
-        if (item != null && newQty > 0 && newQty <= item.getQuantityAvail()) {
-            cart.update(itemId, newQty);
-        }
-    }
-
-    private void removeFromCart(HttpServletRequest request, Cart cart) {
-        String itemId = request.getParameter("itemId");
-        cart.remove(itemId);
-    }
+    
+   
 }

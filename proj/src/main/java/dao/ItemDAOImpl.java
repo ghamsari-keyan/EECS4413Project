@@ -188,34 +188,44 @@ public class ItemDAOImpl implements ItemDAO {
 		return null;
 	}
 
+	@Override
+	public Item getProductById(String itemId) {
+        String query = "SELECT * FROM item WHERE itemId ='" + itemId + "'";
+        Item item = null;
 
- @Override
-    public Item getProductById(String itemId) {
-        Item product = null;
-        String query = "SELECT * FROM computer_store.item WHERE itemId = ?";
+        Connection con = null;
+		try {
+			con = getConnection();
+			Statement stmt = con.createStatement();
 
-        try (Connection con = getConnection(); PreparedStatement pstmt = con.prepareStatement(query)) {
-            pstmt.setString(1, itemId);
-            try (ResultSet res = pstmt.executeQuery()) {
-                if (res.next()) {
-                	// Log the retrieved values
-                    System.out.println("Retrieved values from the database:");
-                    System.out.println("itemId: " + res.getString("itemId"));
-                    System.out.println("prodType: " + res.getString("prodType"));
-                    // ... log other fields ...
-                    product = new Item(res.getString("itemId"), res.getString("prodType"), res.getString("prodName"),
-                            res.getString("prodInfo"), res.getString("brand"), res.getInt("quantity"),
-                            res.getDouble("price"), res.getDouble("rating"), res.getBoolean("ecoFriendly"),
-                            res.getDouble("prodVersion"), res.getString("prodPlatform"), res.getInt("weight"));
-                    product.setOrderedQty(res.getInt("orderedQty"));
-                }
-                
+			ResultSet resultSet = stmt.executeQuery(query);
+
+
+            if (resultSet.next()) {
+                // Replace these with the actual column names and types from your database
+                System.out.println(resultSet.getString("prodName"));
+            	String prodType = resultSet.getString("prodType");
+                String prodName = resultSet.getString("prodName");
+                String prodInfo = resultSet.getString("prodInfo");
+                String brand = resultSet.getString("brand");
+                int quantity = resultSet.getInt("quantity");
+                double price = resultSet.getDouble("price");
+                double rating = resultSet.getDouble("rating");
+                boolean ecoFriendly = resultSet.getBoolean("ecoFriendly");
+                double prodVersion = resultSet.getDouble("prodVersion");
+                String prodPlatform = resultSet.getString("prodPlatform");
+                int weight = resultSet.getInt("weight");
+
+                // Update the constructor call as per your Item class
+                item = new Item(itemId, prodType, prodName, prodInfo, brand, quantity, price, rating, ecoFriendly, prodVersion, prodPlatform, weight);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Handle exceptions properly in production code
         }
-        return product;
+
+        return item;
     }
+
 	/*
 	 * Get a product by name (for customers via search)
 	 */
@@ -395,12 +405,6 @@ public class ItemDAOImpl implements ItemDAO {
 
 
 	@Override
-	public Item getProductById(int itemId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<Item> searchProducts(String keyword) {
 		List<Item> searchResults = new ArrayList<>();
         String query = "SELECT * FROM item WHERE prodName LIKE ? OR prodInfo LIKE ? OR brand LIKE ?";
@@ -427,6 +431,7 @@ public class ItemDAOImpl implements ItemDAO {
 
         return searchResults;
     }
+
 	
 
 }

@@ -65,6 +65,29 @@ request.setAttribute("imageUrls", imageUrls);
     function submitSearchForm() {
         document.getElementById("searchForm").submit();
     }
+    
+    function addToCart(event, itemId) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var quantity = $(event.target).find("input[name='quantity']").val();
+
+        $.ajax({
+            url: "<%= request.getContextPath() %>/cartServlet",
+            type: "POST",
+            data: {
+                action: "addToCart",
+                itemId: itemId,
+                quantity: quantity
+            },
+            success: function(response) {
+                alert("Item added to cart successfully!");
+                // Update the cart display or quantity here
+            },
+            error: function() {
+                alert("Error adding item to cart.");
+            }
+        });
+    }
 
 </script>
 </head>
@@ -94,10 +117,11 @@ request.setAttribute("imageUrls", imageUrls);
                     <span class="info-featured">Price: $${item.price}</span> 
                     <span class="info-featured">Quantity remaining: ${item.quantityAvail}</span>
                 </p>
-                <form action="${pageContext.request.contextPath}/addToCart" method="post">
-                    <input type="hidden" name="itemId" value="${item.itemId}" />
-                    <input class="featured-add-button" type="submit" value="ADD TO CART">
-                </form>
+                <form onsubmit="addToCart(event, '${item.itemId}')">
+                        <input type="hidden" name="itemId" value="${item.itemId}">
+                        <input type="number" name="quantity" value="1" min="1" max="10">
+                        <input type="submit" value="ADD TO CART" class="featured-add-button">
+               	</form>
             </div>
         </c:forEach>
     </div>

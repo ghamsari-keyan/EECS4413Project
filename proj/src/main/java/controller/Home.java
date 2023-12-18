@@ -54,7 +54,10 @@ public class Home extends HttpServlet {
 		String action = request.getParameter("action");
 		String category = request.getParameter("category");
 		String keyWord = request.getParameter("keyWord");
-
+		
+		findFeaturedBooks(request, response);
+		
+		
 		if (action != null) {
 			switch (action) {
 			case "allBooks":
@@ -90,6 +93,23 @@ public class Home extends HttpServlet {
 			List<Item> inventory = itemDAO.productList();
 			
 			request.setAttribute("inventory", inventory);
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	private void findFeaturedBooks(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			// Calling DAO method to retrieve a list of all books
+			
+			List<Item> inventory = itemDAO.productList();
+			
+			List<Item> featured = inventory.subList(0, 8);
+			
+			
+			request.setAttribute("featured", featured);
 
 		} catch (Exception e) {
 			System.out.println(e);

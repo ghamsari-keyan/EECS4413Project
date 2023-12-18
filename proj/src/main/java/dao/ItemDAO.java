@@ -12,8 +12,6 @@ public interface ItemDAO {
 	 
 	 public List<Item> getProductsByRating(int rating);
 	 
-	 public Item getProductById(int itemId);
-	 
 	 public Item getProductByName(String prodName);
 	 
 	 public List<Item> getEcoFriendlyProducts();
