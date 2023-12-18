@@ -48,12 +48,13 @@
 					<td class="inventory-table-data-col">MORE</td>
 				</tr>
 			</c:forEach>
-		
-		
-		
-		
-		
+
 		</table>		
+	</div>
+	<div>
+		<br>
+		<br>
+		<jsp:include page="footer.jsp" flush="true"/>
 	</div>
 
 </body>

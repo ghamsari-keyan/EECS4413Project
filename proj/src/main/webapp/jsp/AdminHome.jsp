@@ -81,9 +81,9 @@
 			</div>
 		
 		</div>
-		<br>
-		<br>
 		<div>
+			<br>
+			<br>
 			<jsp:include page="footer.jsp" flush="true"/>
 		</div>
 		
