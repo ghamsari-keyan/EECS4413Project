@@ -115,6 +115,7 @@ CREATE TABLE `item` (
   `ecoFriendly` tinyint(1) DEFAULT NULL,
   `prodVersion` double NOT NULL,
   `prodPlatform` varchar(60) DEFAULT NULL,
+  `imURL` varchar(30),
   `weight` int NOT NULL,
   PRIMARY KEY (`itemId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

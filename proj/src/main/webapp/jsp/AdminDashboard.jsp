@@ -35,7 +35,7 @@
 		</div>
 		
 		<div>			
-			<span class="big-par">Welcome, ${sessionScope.name} </span>
+			<span class="admin-dash-p">Welcome, ${sessionScope.name} </span>
 			<br>
 			<br>
 		</div>
