@@ -56,8 +56,7 @@
 				<li class="admin-dash-list-ignore">|</li>
 				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=management">MANAGEMENT</a></li>
 			</ul>
-			<br>
-			<br>
+			
 		
 		</div>
 		
