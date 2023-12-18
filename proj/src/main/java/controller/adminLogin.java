@@ -19,8 +19,14 @@ import dao.CustomerDAO;
 import dao.CustomerDAOImpl;
 import dao.ItemDAO;
 import dao.ItemDAOImpl;
+import dao.OrderItemDAO;
+import dao.OrderItemDAOImpl;
+import dao.PurchaseDAO;
+import dao.PurchaseDAOImpl;
 import model.Customer;
 import model.Item;
+import model.OrderItem;
+import model.Purchase;
 
 /**
  * Servlet implementation class adminLogin
@@ -32,6 +38,8 @@ public class adminLogin extends HttpServlet {
 	private AdministratorDAO adminDAO;
 	private ItemDAO itemDAO;
 	private CustomerDAO customerDAO;
+	private PurchaseDAO purchaseDAO;
+	private OrderItemDAO oiDAO;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,6 +57,8 @@ public class adminLogin extends HttpServlet {
     	adminDAO = new AdministratorDAOImpl(getServletContext());
     	itemDAO = new ItemDAOImpl(getServletContext());
     	customerDAO = new CustomerDAOImpl(getServletContext());
+    	purchaseDAO = new PurchaseDAOImpl(getServletContext());
+    	oiDAO = new OrderItemDAOImpl(getServletContext());
     }
 
 	/**
@@ -82,6 +92,7 @@ public class adminLogin extends HttpServlet {
         	case "home":
         		getInventoryList(request, response);
         		getCustomerList(request, response);
+        		getOrderList(request, response);
         		url = base + "AdminHome.jsp";
         		// NEED TO ADD RECENT ORDERS!!!!
         		break;
@@ -202,6 +213,48 @@ public class adminLogin extends HttpServlet {
 			List<Customer> customers = customerDAO.getCustomerList();
 			
 			request.setAttribute("customers", customers);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	private void getOrderList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		try {
+			
+			List<Purchase> purchases = purchaseDAO.purchaseHistory();
+			request.setAttribute("purchases", purchases);
+				
+			getOrderItems(request, response, purchases);
+
+		
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	private void getOrderItems(HttpServletRequest request, HttpServletResponse response, List<Purchase> purchases) throws ServletException, IOException {
+		
+		
+		try {
+			
+			List<List<String>> item = new ArrayList<List<String>>();
+			
+			for (Purchase p : purchases) {
+				
+				List<OrderItem> itms = oiDAO.getItemsFromPurchaseId(p.getPurchaseId());
+				List<String> purchaseItems = new ArrayList<String>();
+				
+					for(OrderItem i : itms) {
+						String prodId = i.getItemId();
+						purchaseItems.add(prodId);
+					}
+					
+				item.add(purchaseItems);
+			}
+			
+			request.setAttribute("orderItms", item);
 			
 		} catch (Exception e) {
 			System.out.println(e);

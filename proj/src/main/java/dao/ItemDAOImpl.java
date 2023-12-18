@@ -75,23 +75,6 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getString("prodPlatform"),	
 						res.getInt("weight"));
 
-				/*
-				 * Retrieving all the information about a product 
-				 */
-//				product.setItemId(res.getString("itemId"));
-//				product.setProdName(res.getString("prodName"));
-//				product.setProdVersion(res.getDouble("prodVersion"));
-//				product.setProdPlatform(res.getString("prodPlatform"));
-//				product.setProdType(res.getString("prodType"));
-//				product.setProdInfo(res.getString("prodInfo"));
-//				product.setBrandName(res.getString("brand"));
-//				product.setQuantityAvail(res.getInt("quantity"));
-//				product.setPrice(res.getDouble("price"));
-//				product.setRating(res.getDouble("rating"));
-//				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
-//				product.setWeight(res.getInt("weight"));
-
-				// now add the product to the list
 				resu.add(product);
 
 			}

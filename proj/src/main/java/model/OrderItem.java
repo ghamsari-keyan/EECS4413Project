@@ -3,15 +3,15 @@ package model;
 public class OrderItem {
 	
 	private int orderItemId;
-	private String purchId;
-	private int itemId;
+	private int purchId;
+	private String itemId;
 	private int quantity;
 	private double orderItemCost;
 	
 	/*
 	 * OrderItem constructor
 	 */
-	public OrderItem(int orderItemId, String purchId, int itemId, int quantity, double orderItemCost) {
+	public OrderItem(int orderItemId, int purchId, String itemId, int quantity, double orderItemCost) {
 		super();
 		this.orderItemId = orderItemId;
 		this.purchId = purchId;
@@ -29,16 +29,16 @@ public class OrderItem {
 	public void setOrderItemId(int orderItemId) {
 		this.orderItemId = orderItemId;
 	}
-	public String getPurchId() {
+	public int getPurchId() {
 		return purchId;
 	}
-	public void setPurchId(String purchId) {
+	public void setPurchId(int purchId) {
 		this.purchId = purchId;
 	}
-	public int getItemId() {
+	public String getItemId() {
 		return itemId;
 	}
-	public void setItemId(int itemId) {
+	public void setItemId(String itemId) {
 		this.itemId = itemId;
 	}
 	public int getQuantity() {
