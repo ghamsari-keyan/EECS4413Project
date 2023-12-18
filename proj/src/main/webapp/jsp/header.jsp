@@ -14,9 +14,24 @@
    		</form>
 	</li>
 	
-	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in-admin.html">ADMIN</a></li>
-	<li class="navLi"> | </li>
-	<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in.html">SIGN IN</a></li>
+	
+	
+	<c:choose> 
+		<c:when test="${sessionScope.name == null}">
+			<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in-admin.html">ADMIN</a></li>
+			<li class="navLi"> | </li>
+			<li class="navLi"><a href="${pageContext.request.contextPath}/sign-in.html">SIGN IN</a></li>
+		</c:when>
+		<c:when test="${name != null}">
+			
+			<li class="navLi"><a href="${pageContext.request.contextPath}/adminLogin?action=logout">Sign Out</a></li>
+			<li class="navLi"> | </li>
+			<li class="navLi"><a href="${pageContext.request.contextPath}/adminLogin?action=home">Dashboard</a></li>
+			<li class="navLi"> | </li>
+			<li class="navLi">${name}</li>
+		</c:when>
+		 
+	</c:choose>
 </ul>
 
 <ul class="nav_ul">

@@ -113,6 +113,9 @@ public class adminLogin extends HttpServlet {
         		url = base +"addProduct.jsp";
         		addProduct(request,response);
         		break;
+        	case "logout":
+        		sesh.removeAttribute("name");
+        		url = "sign-in-admin.html";
         	}
         	
     	}
