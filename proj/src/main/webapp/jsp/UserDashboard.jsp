@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import = "java.io.*, java.util.*" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.io.*, java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%request.getProtocol();%>
 
 <!DOCTYPE html >
 
- 
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,52 +17,29 @@
 </head>
 <body>
 	<div id="centered">
-		<div>		
-			<jsp:include page="header.jsp" flush="true" />		
+		<div>
+			<jsp:include page="header.jsp" flush="true" />
 		</div>
-				
-		<div>		
+
+		<div>
 			<jsp:include page="leftColumn.jsp" flush="true" />
 		</div>
-		
-		
+
+
 		<br>
-		<div>			
+		<div>
 			<span class="admin-dash-p"><b>USER DASHBOARD</b></span>
 		</div>
 		<div>
-		<br>
-		</div>
-		
-		<div>			
-			<span class="big-par">Welcome, ${sessionScope.name} </span>
-			<br>
 			<br>
 		</div>
-		<br>
-		<br>
-		<br>
-		
-		<div>
-		
-			<ul class="admin-dash">
-				<li class="admin-dash-list"><a class="admin-dash-list-link" href="userLogin?action=customer">CUSTOMER INFO</a></li>
-				<li class="admin-dash-list-ignore">|</li>
-				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=inventory">PURCHASE HISTORY</a></li>
-				<li class="admin-dash-list-ignore">|</li>
-		<!-- 		<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=customer">CUSTOMER INFO</a></li>
-				<li class="admin-dash-list-ignore">|</li>
-				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=orderHistory">ORDER HISTORY</a></li>
-				<li class="admin-dash-list-ignore">|</li>
-				<li class="admin-dash-list"><a class="admin-dash-list-link" href="adminLogin?action=management">MANAGEMENT</a></li> -->
-			</ul>
-			<br>
-			<br>
-		
-		</div>
-		
-	</div>
-	
 
+		<div>
+			<span class="big-par">Welcome, ${sessionScope.name} </span> <br>
+			<br>
+		</div>
+		<br> <br> <br>
+
+	</div>
 </body>
 </html>
