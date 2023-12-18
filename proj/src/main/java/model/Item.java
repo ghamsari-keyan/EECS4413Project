@@ -29,6 +29,7 @@ public class Item {
 		
 		this.itemId = itemId;
 		this.prodType = prodType;
+		this.brandName = brandName;
 		this.prodName = prodName;
 		this.prodInfo = prodInfo;
 		this.quantityAvail = quantityAvail;

@@ -58,6 +58,69 @@ input {
 
 }
 
+.the-latest {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	
+}
+
+.latest-div {
+	
+	height: fit-content;
+	justify-content: center;
+	
+}
+
+.left-side-admin {
+	flex: 1;
+	
+	
+}
+
+.right-side-admin {
+	flex: 1;
+	border: 3px solid white;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+.latest-header {
+	
+	font-family:"Helvetica";
+	color:white;
+	font-size: 25px;
+	float:left;
+	margin: 20px;
+}
+
+.latest-prods {
+	padding: 20px;
+	border: 3px solid white;
+	border-radius: 20px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.latest-prod-additions {
+	/* margin-left: 50px; */
+	background-color: purple;
+	border: 1px solid purple;
+	border-radius: 20px;
+	text-align: left;
+	width: 75%;
+	height: fit-content;
+	padding-left: 20px; 
+}
+
+.latest-prod-additions-info {
+	
+	font-family: Helvetica;
+	font-size: 18px;
+	color: white;
+	line-height: 10px;;
+}
+
 
 .big-par {
 	font-family:"Helvetica";
@@ -186,11 +249,13 @@ input {
 	background-color: white;
 	color:black;
 	font-size:20px;
+	padding: 1px;
 }
 
-/* .inventory-table-heading-col {
-	padding:10px
-} */
+.inventory-table-heading-col-addr {
+	background-color: yellow;
+	
+}
 
 
 .inventory-table-data-col {
