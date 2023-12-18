@@ -104,6 +104,10 @@ public class adminLogin extends HttpServlet {
         		getCustomerList(request, response);
         		url=base + "customerView.jsp";
         		break;
+        	case "orderHistory":
+        		getOrderList(request, response);
+        		url=base+"OrderHistory.jsp";
+        		break;
         	case "addProduct":
         		url=base+"addProduct.jsp";
 //        		addProduct(request, response);
