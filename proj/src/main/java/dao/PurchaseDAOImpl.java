@@ -55,7 +55,7 @@ public class PurchaseDAOImpl implements PurchaseDAO{
 		
 		List<Purchase> resu = new ArrayList<Purchase>();
 
-		String query = "SELECT * FROM computer_store.purchaseOrder";
+		String query = "SELECT * FROM computer_store.purchaseOrder ORDER BY date DESC";
 
 		Connection con = null;
 		
