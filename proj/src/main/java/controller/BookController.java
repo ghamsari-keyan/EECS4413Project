@@ -18,7 +18,7 @@ import model.Book;
 import model.Category;
 
 @SuppressWarnings("serial")
-@WebServlet("/books")
+@WebServlet("/bookController")
 public class BookController extends HttpServlet {
 
 	private BookDAO bookDAO;
