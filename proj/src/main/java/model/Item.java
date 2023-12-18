@@ -15,6 +15,7 @@ public class Item {
 	private String prodPlatform;
 	private int weight;
 	private int orderedQty;
+	private String imUrl;
 	
 	public Item(String itemId, String prodType,String prodName,
 		String prodInfo,
@@ -25,7 +26,7 @@ public class Item {
 		boolean ecoFriendly,
 		double prodVersion,
 		String prodPlatform,
-		int weight) {
+		int weight, String imUrl) {
 		
 		this.itemId = itemId;
 		this.prodType = prodType;
@@ -39,6 +40,7 @@ public class Item {
 		this.prodPlatform = prodPlatform;
 		this.weight = weight;
 		this.orderedQty = 0;
+		this.imUrl = imUrl;
 		
 	}
 
@@ -123,6 +125,14 @@ public class Item {
 	}
 	public void setOrderedQty(int orderedQty) {
 		this.orderedQty = orderedQty;
+	}
+
+	public String getImUrl() {
+		return imUrl;
+	}
+
+	public void setImUrl(String imUrl) {
+		this.imUrl = imUrl;
 	}
 	
 	

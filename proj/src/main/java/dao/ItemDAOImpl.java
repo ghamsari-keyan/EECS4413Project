@@ -73,7 +73,8 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getBoolean("ecoFriendly"),
 						res.getDouble("prodVersion"),
 						res.getString("prodPlatform"),	
-						res.getInt("weight"));
+						res.getInt("weight"),
+						res.getString("imURL"));
 
 				resu.add(product);
 
@@ -117,7 +118,7 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getBoolean("ecoFriendly"),
 						res.getDouble("prodVersion"),
 						res.getString("prodPlatform"),	
-						res.getInt("weight"));
+						res.getInt("weight"), res.getString("imURL"));
 
 				// now add the product to the list
 				resu.add(product);
@@ -182,9 +183,10 @@ public class ItemDAOImpl implements ItemDAO {
                 double prodVersion = resultSet.getDouble("prodVersion");
                 String prodPlatform = resultSet.getString("prodPlatform");
                 int weight = resultSet.getInt("weight");
+                String imUrl = resultSet.getString("imURL");
 
                 // Update the constructor call as per your Item class
-                item = new Item(itemId, prodType, prodName, prodInfo, brand, quantity, price, rating, ecoFriendly, prodVersion, prodPlatform, weight);
+                item = new Item(itemId, prodType, prodName, prodInfo, brand, quantity, price, rating, ecoFriendly, prodVersion, prodPlatform, weight, imUrl);
             }
         } catch (SQLException e) {
             e.printStackTrace(); // Handle exceptions properly in production code
@@ -236,7 +238,7 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getBoolean("ecoFriendly"),
 						res.getDouble("prodVersion"),
 						res.getString("prodPlatform"),	
-						res.getInt("weight"));
+						res.getInt("weight"), res.getString("imURL"));
 				// now add the product to the list
 				resu.add(product);
 
@@ -372,7 +374,7 @@ public class ItemDAOImpl implements ItemDAO {
                             res.getString("prodName"), res.getString("prodInfo"), res.getString("brand"),
                             res.getInt("quantity"), res.getDouble("price"), res.getDouble("rating"),
                             res.getBoolean("ecoFriendly"), res.getDouble("prodVersion"),
-                            res.getString("prodPlatform"), res.getInt("weight"));
+                            res.getString("prodPlatform"), res.getInt("weight"), res.getString("imURL"));
                     searchResults.add(product);
                 }
             }
