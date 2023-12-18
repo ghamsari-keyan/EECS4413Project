@@ -2,7 +2,7 @@
 <%@ page import="java.io.*, java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%
+<%-- <%
 List<String> imageUrls = new ArrayList<>();
 imageUrls.add("images/Laptop.png");
 imageUrls.add("images/Desktop.png");
@@ -14,7 +14,7 @@ imageUrls.add("images/Speaker.png");
 imageUrls.add("images/Tablet.png");
 
 request.setAttribute("imageUrls", imageUrls);
-%>
+%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +61,7 @@ request.setAttribute("imageUrls", imageUrls);
         <c:forEach var="item" items="${featured}" varStatus="loop">
             <div class="card" data-price="${item.price}">
                 <div class="prodIm">
-                    <img src="${imageUrls[loop.index]}" alt="Product Image ${loop.index}" />
+                    <img src="${item.getImUrl()}" alt="Product Image ${loop.index}" />
                 </div>
                 <p>
                     <span class="header-featured">${item.prodName}</span> 
