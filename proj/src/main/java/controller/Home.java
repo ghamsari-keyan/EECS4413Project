@@ -68,12 +68,13 @@ public class Home extends HttpServlet {
 				findProductsByCategory(request, response);
 				url = base + "category.jsp";
 				break;
-			/*
-			 * Implementing the sort by brand header
-			 */
 			case "brands":
 				findProductsByBrand(request, response);
 				url = base + "brands.jsp";
+				break;
+			case "search":
+				searchProducts(request, response, keyWord);
+				url = base + "searchResult.jsp";
 				break;
 			}
 		}
@@ -149,4 +150,23 @@ public class Home extends HttpServlet {
 			System.out.println(e);
 		}
 	}
+	
+	
+	/**
+	 * Method that calls on the site search feature
+	 */
+	private void searchProducts(HttpServletRequest request, HttpServletResponse response, String keyword) throws ServletException, IOException {
+		
+		
+		try {
+			List<Item> searchResp = itemDAO.searchProducts(keyword);
+			request.setAttribute("searchResponse", searchResp);
+			System.out.println(searchResp.toArray().toString());
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+			
+	}
+	
 }

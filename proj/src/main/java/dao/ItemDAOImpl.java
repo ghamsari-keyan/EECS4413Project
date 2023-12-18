@@ -119,22 +119,6 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getString("prodPlatform"),	
 						res.getInt("weight"));
 
-				/*
-				 * Retrieving all the information about a product 
-				 */
-//				product.setItemId(res.getString("itemId"));
-//				product.setProdName(res.getString("prodName"));
-//				product.setProdVersion(res.getDouble("prodVersion"));
-//				product.setProdPlatform(res.getString("prodPlatform"));
-//				product.setProdType(res.getString("prodType"));
-//				product.setProdInfo(res.getString("prodInfo"));
-//				product.setBrandName(res.getString("brand"));
-//				product.setQuantityAvail(res.getInt("quantity"));
-//				product.setPrice(res.getDouble("price"));
-//				product.setRating(res.getDouble("rating"));
-//				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
-//				product.setWeight(res.getInt("weight"));
-
 				// now add the product to the list
 				resu.add(product);
 
@@ -253,23 +237,6 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getDouble("prodVersion"),
 						res.getString("prodPlatform"),	
 						res.getInt("weight"));
-
-				/*
-				 * Retrieving all the information about a product 
-				 */
-//				product.setItemId(res.getString("itemId"));
-//				product.setProdName(res.getString("prodName"));
-//				product.setProdVersion(res.getDouble("prodVersion"));
-//				product.setProdPlatform(res.getString("prodPlatform"));
-//				product.setProdType(res.getString("prodType"));
-//				product.setProdInfo(res.getString("prodInfo"));
-//				product.setBrandName(res.getString("brand"));
-//				product.setQuantityAvail(res.getInt("quantity"));
-//				product.setPrice(res.getDouble("price"));
-//				product.setRating(res.getDouble("rating"));
-//				product.setEcoFriendly(res.getBoolean("ecoFriendly"));
-//				product.setWeight(res.getInt("weight"));
-
 				// now add the product to the list
 				resu.add(product);
 
@@ -390,13 +357,14 @@ public class ItemDAOImpl implements ItemDAO {
 	@Override
 	public List<Item> searchProducts(String keyword) {
 		List<Item> searchResults = new ArrayList<>();
-        String query = "SELECT * FROM item WHERE prodName LIKE ? OR prodInfo LIKE ? OR brand LIKE ?";
-        
+		String query = "SELECT * FROM item WHERE itemId LIKE ? OR prodName LIKE ? OR prodInfo LIKE ? OR brand LIKE ?";
+		
         try (Connection con = getConnection(); 
              PreparedStatement pstmt = con.prepareStatement(query)) {
             pstmt.setString(1, "%" + keyword + "%");
             pstmt.setString(2, "%" + keyword + "%");
             pstmt.setString(3, "%" + keyword + "%");
+            pstmt.setString(4, "%" + keyword + "%");
 
             try (ResultSet res = pstmt.executeQuery()) {
                 while (res.next()) {

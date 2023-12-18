@@ -20,13 +20,42 @@
 		<jsp:include page="leftColumn.jsp" flush="true" />
 		
 		<br>
-		<br>
-        <div>
-            <span class="label" style="margin-left: 15px;">Search results</span>
-        </div>
-        <jsp:include page="list.jsp" flush="true" />
-    </div>
+	
+		<c:choose>
+		
+			<c:when test="${empty searchResponse}">
+				<div>
+					<p class="big-par"> Your search for ${keyWord} returned no results. Try Again</p>			
+				</div>
+			
+			</c:when>
+			
+			<c:otherwise>
+				<span class="big-par">Search Results</span>
+				
+				<div class="grid">
+					<c:forEach var="item" items="${searchResponse}" varStatus="loop">
+						<div class="card" id="product-${loop.index}">
+							<div class="prodIm">
+								<img class="category-image" src="${url[item.prodType]}" alt="Product Image" data-category="${item.prodType}">
+			
+							</div>
+							<p>
+								<span class="header-featured">${item.prodName}</span> <span
+									class="info-featured">${item.prodInfo}</span> <span
+									class="info-featured">$${item.price}</span> <span
+									class="info-featured">Quantity remaining:
+									${item.quantityAvail}</span>
+							</p>
+							<input class="featured-add-button" type="submit" value="ADD TO CART">
+						</div>
+					</c:forEach>
+				</div>
+			</c:otherwise>
+			
+		</c:choose>
 
+	</div>
 
 </body>
 </html>
