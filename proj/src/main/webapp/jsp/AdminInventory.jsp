@@ -73,6 +73,11 @@
 			</table>
 		
 		</div>
+		<div>
+			<br>
+			<br>
+			<jsp:include page="footer.jsp" flush="true"/>
+		</div>
 	
 	</div>
 	

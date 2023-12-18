@@ -51,7 +51,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 		List<Customer> resu = new ArrayList<Customer>();
 		
-		String query = "SELECT * FROM computer_store.customer";
+		String query = "SELECT * FROM computer_store.customer JOIN computer_store.address ON customer.addressID = address.addrId";
 		
 		Connection con = null;
 		try {
@@ -62,7 +62,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 			while(rs.next()) {
 				
 				Customer customer = new Customer(rs.getInt("id"), rs.getString("firstName"), 
-						rs.getString("lastName"), rs.getInt("addressID"));
+						rs.getString("lastName"), rs.getInt("addressID"), rs.getString("street"), rs.getString("province"), rs.getString("country"), rs.getString("postalCode"), rs.getString("phone"));
 				
 				resu.add(customer);
 			}

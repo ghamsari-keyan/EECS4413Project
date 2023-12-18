@@ -21,17 +21,18 @@
 		<div>
 			<jsp:include page="AdminDashboard.jsp" flush="true"/>
 		</div>
-		<div>
-Z			<ul class="admin-dash" style="width:fit-content">
-				<li class="admin-dash-list" style="padding:0;border:1px solid white"><a class="admin-dash-list-link" style="font-size:14px" href="adminLogin?action=addProduct">Add Product</a></li>
-			</ul>
-		</div>
+		
 		<table class="inventory-table">
 			<tr class="inventory-table-heading">
 				<td class="inventory-table-heading-col">CUST. ID</td>
 				<td class="inventory-table-heading-col">FIRST NAME</td>
 				<td class="inventory-table-heading-col">LAST NAME</td>
-				<td class="inventory-table-heading-col">ADDRESS</td>
+				<td class="inventory-table-heading-col-addr">STREET</td>
+				<td class="inventory-table-heading-col-addr">PROVINCE</td>
+				<td class="inventory-table-heading-col-addr">COUNTRY</td>
+				<td class="inventory-table-heading-col-addr">POSTAL CODE</td>
+				<td class="inventory-table-heading-col-addr">TEL.</td>
+				<td></td>
 			</tr>
 			<c:forEach var="cust" items="${customers}">
 				
@@ -39,15 +40,21 @@ Z			<ul class="admin-dash" style="width:fit-content">
 					<td class="inventory-table-data-col">${cust.id}</td>
 					<td class="inventory-table-data-col">${cust.firstName}</td>
 					<td class="inventory-table-data-col">${cust.lastName}</td>
-					<td class="inventory-table-data-col">${cust.addrId}</td>
+					<td class="inventory-table-data-col">${cust.street}</td>
+					<td class="inventory-table-data-col">${cust.province}</td>
+					<td class="inventory-table-data-col">${cust.country}</td>
+					<td class="inventory-table-data-col">${cust.postal}</td>
+					<td class="inventory-table-data-col">${cust.phone}</td>
+					<td class="inventory-table-data-col">MORE</td>
 				</tr>
 			</c:forEach>
-		
-		
-		
-		
-		
+
 		</table>		
+	</div>
+	<div>
+		<br>
+		<br>
+		<jsp:include page="footer.jsp" flush="true"/>
 	</div>
 
 </body>

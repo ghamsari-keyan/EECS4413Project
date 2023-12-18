@@ -67,10 +67,9 @@ public class adminLogin extends HttpServlet {
 		
 		HttpSession sesh = request.getSession();
 		String base="/jsp/";
-		String url = base + "AdminDashboard.jsp";
         
         String action=request.getParameter("action");
-        
+        String url = "";
         if (action!=null) {
         	
         	switch(action) {
@@ -78,9 +77,13 @@ public class adminLogin extends HttpServlet {
         		String username = request.getParameter("username");
         		String password = request.getParameter("password");
         		sesh.setAttribute("name", username);
+        		url = base + "AdminHome.jsp";
         		
         	case "home":
-        		url = url;
+        		getInventoryList(request, response);
+        		getCustomerList(request, response);
+        		url = base + "AdminHome.jsp";
+        		// NEED TO ADD RECENT ORDERS!!!!
         		break;
         	case "inventory":
         		getInventoryList(request, response);
