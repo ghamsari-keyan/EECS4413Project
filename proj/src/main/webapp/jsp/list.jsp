@@ -4,21 +4,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 List<String> imageUrls = new ArrayList<>();
-imageUrls.add("images/laptop.png");
-imageUrls.add("images/desktop.png");
-imageUrls.add("images/monitor.png");
-imageUrls.add("images/keyboard.png");
-imageUrls.add("images/mouse2.png");
-imageUrls.add("images/headphones.png");
-imageUrls.add("images/speaker.png");
-imageUrls.add("images/tablet.png");
-imageUrls.add("images/router.png");
-imageUrls.add("images/printer.png");
-imageUrls.add("images/scanner.png");
-imageUrls.add("images/webcam.png");
-imageUrls.add("images/external_drive.png");
-imageUrls.add("images/graphics_card.png");
-imageUrls.add("images/ram.png");
+imageUrls.add("images/Laptop.png");
+imageUrls.add("images/Desktop.png");
+imageUrls.add("images/Monitor.png");
+imageUrls.add("images/Keyboard.png");
+imageUrls.add("images/Mouse2.png");
+imageUrls.add("images/Headphones.png");
+imageUrls.add("images/Speaker.png");
+imageUrls.add("images/Tablet.png");
+imageUrls.add("images/Router.png");
+imageUrls.add("images/Printer.png");
+imageUrls.add("images/Scanner.png");
+imageUrls.add("images/Webcam.png");
+imageUrls.add("images/External Drive.png");
+imageUrls.add("images/Graphics Card.png");
+imageUrls.add("images/RAM.png");
 
 
 

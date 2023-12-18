@@ -1,7 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
+<%@ page import="java.io.*, java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%
+List<String> imageUrls = new ArrayList<>();
+imageUrls.add("images/Laptop.png");
+imageUrls.add("images/Desktop.png");
+imageUrls.add("images/Monitor.png");
+imageUrls.add("images/Keyboard.png");
+imageUrls.add("images/Mouse2.png");
+imageUrls.add("images/Headphones.png");
+imageUrls.add("images/Speaker.png");
+imageUrls.add("images/Tablet.png");
+imageUrls.add("images/Router.png");
+imageUrls.add("images/Printer.png");
+imageUrls.add("images/Scanner.png");
+imageUrls.add("images/Webcam.png");
+imageUrls.add("images/External Drive.png");
+imageUrls.add("images/Graphics Card.png");
+imageUrls.add("images/RAM.png");
+
+request.setAttribute("imageUrls", imageUrls);
+%>
 
 <!DOCTYPE html >
 <html>
@@ -21,20 +42,23 @@
 	</div>
 	<br>
 	<span class="big-par">All ${brand} Products</span>
-	
+
 	<div class="grid">
-		<c:forEach var="item" items="${brandProds}">	
-			<div class="card">
-					<div class="prodIm"></div>
-						<p><span class="header-featured">${item.prodName}</span>				
-						<span class="info-featured"> ${item.prodInfo}</span>
-						<span class="info-featured">$${item.price}</span>
-						<span class="info-featured">Quantity remaining: ${item.quantityAvail}</span>
-						
-					</p>
+		<c:forEach var="item" items="${brandProds}">
+			<div class="card" id="product-${loop.index}">
+				<div class="prodIm">
+					<img class="brand-image" src="${url[item.brandName]}" alt="Product Image" data-brand="${item.brandName}">
 					
-					<input class="featured-add-button" type="submit" value="ADD TO CART">
 				</div>
+				<p>
+					<span class="header-featured">${item.prodName}</span> <span
+						class="info-featured">${item.prodInfo}</span> <span
+						class="info-featured">$${item.price}</span> <span
+						class="info-featured">Quantity remaining:
+						${item.quantityAvail}</span>
+				</p>
+				<input class="brand-add-button" type="submit" value="ADD TO CART">
+			</div>
 		</c:forEach>
 	</div>
 

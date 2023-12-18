@@ -4,14 +4,14 @@
 
 <%
 List<String> imageUrls = new ArrayList<>();
-imageUrls.add("images/laptop.png");
-imageUrls.add("images/desktop.png");
-imageUrls.add("images/monitor.png");
-imageUrls.add("images/keyboard.png");
-imageUrls.add("images/mouse2.png");
-imageUrls.add("images/headphones.png");
-imageUrls.add("images/speaker.png");
-imageUrls.add("images/tablet.png");
+imageUrls.add("images/Laptop.png");
+imageUrls.add("images/Desktop.png");
+imageUrls.add("images/Monitor.png");
+imageUrls.add("images/Keyboard.png");
+imageUrls.add("images/Mouse2.png");
+imageUrls.add("images/Headphones.png");
+imageUrls.add("images/Speaker.png");
+imageUrls.add("images/Tablet.png");
 
 request.setAttribute("imageUrls", imageUrls);
 %>
