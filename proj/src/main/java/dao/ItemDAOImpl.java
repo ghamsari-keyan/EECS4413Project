@@ -119,6 +119,9 @@ public class ItemDAOImpl implements ItemDAO {
 						res.getDouble("prodVersion"),
 						res.getString("prodPlatform"),	
 						res.getInt("weight"), res.getString("imURL"));
+				String url = res.getString("imURL");
+				
+				System.out.println(url);
 
 				// now add the product to the list
 				resu.add(product);

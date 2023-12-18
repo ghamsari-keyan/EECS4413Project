@@ -107,7 +107,7 @@ public class Home extends HttpServlet {
 			
 			List<Item> inventory = itemDAO.productList();
 			
-			List<Item> featured = inventory.subList(0, 1);
+			List<Item> featured = inventory.subList(0, 8);
 			
 			
 			request.setAttribute("featured", featured);
