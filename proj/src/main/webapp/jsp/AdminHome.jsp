@@ -76,6 +76,23 @@
 			
 				<div>
 					<span class="latest-header">Recent Orders</span>
+					
+					<div class="latest-prods">
+						<p class="latest-p">New Additions</p>
+						<div class="latest-prod-additions" style="background:none;border-width:3px">
+							<p class="latest-prod-additions-info"><b>ORDER ID: ${purchases[0].purchaseId}</b></p>
+							<p class="latest-prod-additions-info"><span style="color:grey">SIZE: ${purchases[0].orderSize}</span></p>
+							<p class="latest-prod-additions-info"><span style="color:grey"><i>cust</i> ${purchases[0].customerId}</span></p>
+							<p class="latest-prod-additions-info"><span style="color:grey">${purchases[0].date}</span></p>
+						</div>				
+						<br>
+						<div class="latest-prod-additions" style="background:none;border-width:3px">
+							<p class="latest-prod-additions-info"><b>ORDER ID: ${purchases[1].purchaseId}</b></p>
+							<p class="latest-prod-additions-info"><span style="color:grey">SIZE: ${purchases[1].orderSize}</span></p>
+							<p class="latest-prod-additions-info"><span style="color:grey"><i>cust</i> ${purchases[1].customerId}</span></p>
+							<p class="latest-prod-additions-info"><span style="color:grey">${purchases[1].date}</span></p>
+						</div>
+					</div>
 				
 				</div>
 			</div>

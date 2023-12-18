@@ -19,8 +19,11 @@ import dao.CustomerDAO;
 import dao.CustomerDAOImpl;
 import dao.ItemDAO;
 import dao.ItemDAOImpl;
+import dao.PurchaseDAO;
+import dao.PurchaseDAOImpl;
 import model.Customer;
 import model.Item;
+import model.Purchase;
 
 /**
  * Servlet implementation class adminLogin
@@ -32,6 +35,7 @@ public class adminLogin extends HttpServlet {
 	private AdministratorDAO adminDAO;
 	private ItemDAO itemDAO;
 	private CustomerDAO customerDAO;
+	private PurchaseDAO purchaseDAO;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,6 +53,7 @@ public class adminLogin extends HttpServlet {
     	adminDAO = new AdministratorDAOImpl(getServletContext());
     	itemDAO = new ItemDAOImpl(getServletContext());
     	customerDAO = new CustomerDAOImpl(getServletContext());
+    	purchaseDAO = new PurchaseDAOImpl(getServletContext());
     }
 
 	/**
@@ -82,6 +87,7 @@ public class adminLogin extends HttpServlet {
         	case "home":
         		getInventoryList(request, response);
         		getCustomerList(request, response);
+        		getOrderList(request, response);
         		url = base + "AdminHome.jsp";
         		// NEED TO ADD RECENT ORDERS!!!!
         		break;
@@ -203,6 +209,18 @@ public class adminLogin extends HttpServlet {
 			
 			request.setAttribute("customers", customers);
 			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	private void getOrderList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		try {
+			
+			List<Purchase> purchases = purchaseDAO.purchaseHistory();
+			request.setAttribute("purchases", purchases);
+		
 		} catch (Exception e) {
 			System.out.println(e);
 		}
