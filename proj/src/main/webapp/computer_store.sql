@@ -100,7 +100,7 @@ UNLOCK TABLES;
 -- Table structure for table `item`
 --
 
-DROP TABLE IF EXISTS `item`;
+-- DROP TABLE IF EXISTS `item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `item` (
@@ -116,6 +116,7 @@ CREATE TABLE `item` (
   `prodVersion` double NOT NULL,
   `prodPlatform` varchar(60) DEFAULT NULL,
   `weight` int NOT NULL,
+  `imURL` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`itemId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -124,13 +125,26 @@ CREATE TABLE `item` (
 -- Dumping data for table `item`
 --
 
-LOCK TABLES `item` WRITE;
-/*!40000 ALTER TABLE `item` DISABLE KEYS */;
-INSERT INTO `item` VALUES ('ITM000','Laptop','Model X1','15-inch display, 8GB RAM, 256GB SSD','BrandA',10,1200,4.5,1,1.1,'Windows', 1500, 'test');
-INSERT INTO `item` VALUES ('ITM167','Laptop','Model X1','15-inch display, 8GB RAM, 256GB SSD','BrandA',10,1200,4.5,1,1.1,'Windows', 1500, 'test1');
-INSERT INTO `item` VALUES ('ITM001','Laptop','Model X1','15-inch display, 8GB RAM, 256GB SSD','BrandA',10,1200,4.5,1,1.1,'Windows','test', 1500),('ITM002','Desktop','Model D2','Core i5, 16GB RAM, 1TB HDD','BrandB',15,800,4.3,0,2,'Linux','null', 7500),('ITM003','Monitor','UltraView 27','27-inch 4K UHD','BrandC',20,300,4.7,1,1,'Any',3000),('ITM004','Keyboard','Mechanical KB100','Mechanical keys, RGB lighting','BrandD',30,100,4.6,0,1.2,'Any',500),('ITM005','Mouse','GamerMouse Pro','Ergonomic design, 7 buttons','BrandE',50,50,4.4,1,1.3,'Any',200),('ITM006','Headphones','AudioBeat X','Noise cancellation, wireless','BrandF',25,150,4.8,0,2.1,'Any',300),('ITM007','Speaker','SoundWave 3','Bluetooth connectivity, waterproof','BrandG',15,80,4.2,1,2,'Any',600),('ITM008','Tablet','Tab Elite 8','8-inch screen, 64GB storage','BrandH',10,400,4.5,0,1.4,'Android',700),('ITM009','Router','NetFast X500','Dual-band, 4 antennas','BrandI',20,120,4.3,1,1.5,'Any',400),('ITM010','Printer','PrintMaster 2000','Laser printer, wireless','BrandJ',12,250,4,0,1,'Any',5000),('ITM011','Scanner','ScanPro 3D','3D scanning capabilities','BrandK',5,500,4.6,1,1.2,'Any',4500),('ITM012','Webcam','ClearView HD','1080p, built-in microphone','BrandL',25,70,4.4,0,1,'Any',150),('ITM013','External Drive','1TB StorePlus','1TB capacity, USB 3.0','BrandM',20,90,4.7,1,1.1,'Any',250),('ITM014','Graphics Card','GTX 1080Ti','11GB GDDR5X','BrandN',8,700,4.8,0,1,'Any',800),('ITM015','RAM','16GB DDR4','16GB, 3200MHz','BrandO',30,60,4.5,1,1,'Any',100);
-/*!40000 ALTER TABLE `item` ENABLE KEYS */;
-UNLOCK TABLES;
+-- LOCK TABLES `item` WRITE;
+-- /*!40000 ALTER TABLE `item` DISABLE KEYS */;
+INSERT INTO item VALUES 
+('ITM002','Desktop','Model D2','Core i5, 16GB RAM, 1TB HDD','BrandB',15,800,4.3,0,2,'Linux',7500,'images/Desktop.png'),
+('ITM003','Monitor','UltraView 27','27-inch 4K UHD','BrandC',20,300,4.7,1,1,'Any',3000,'images/Monitor.png'),
+('ITM004','Keyboard','Mechanical KB100','Mechanical keys, RGB lighting','BrandD',30,100,4.6,0,1.2,'Any',500,'images/Keyboard.png'),
+('ITM005','Mouse','GamerMouse Pro','Ergonomic design, 7 buttons','BrandE',50,50,4.4,1,1.3,'Any',200,'images/Mouse2.png'),
+('ITM006','Headphones','AudioBeat X','Noise cancellation, wireless','BrandF',25,150,4.8,0,2.1,'Any',300,'images/Headphones.png'),
+('ITM007','Speaker','SoundWave 3','Bluetooth connectivity, waterproof','BrandG',15,80,4.2,1,2,'Any',600,'images/Speaker.png'),
+('ITM008','Tablet','Tab Elite 8','8-inch screen, 64GB storage','BrandH',10,400,4.5,0,1.4,'Android',700,'images/Tablet.png'),
+('ITM009','Router','NetFast X500','Dual-band, 4 antennas','BrandI',20,120,4.3,1,1.5,'Any',400,'images/Router.png'),
+('ITM010','Printer','PrintMaster 2000','Laser printer, wireless','BrandJ',12,250,4,0,1,'Any',5000,'images/Printer.png'),
+('ITM011','Scanner','ScanPro 3D','3D scanning capabilities','BrandK',5,500,4.6,1,1.2,'Any',4500,'images/Scanner.png'),
+('ITM012','Webcam','ClearView HD','1080p, built-in microphone','BrandL',25,70,4.4,0,1,'Any',150,'images/Webcam.png'),
+('ITM013','External Drive','1TB StorePlus','1TB capacity, USB 3.0','BrandM',20,90,4.7,1,1.1,'Any',250,'images/External Drive.png'),
+('ITM014','Graphics Card','GTX 1080Ti','11GB GDDR5X','BrandN',8,700,4.8,0,1,'Any',800,'images/Graphics Card.png'),
+('ITM015','RAM','16GB DDR4','16GB, 3200MHz','BrandO',30,60,4.5,1,1,'Any',100,'images/RAM.png');
+
+-- /*!40000 ALTER TABLE `item` ENABLE KEYS */;
+-- UNLOCK TABLES;
 
 --
 -- Table structure for table `orderItem`
