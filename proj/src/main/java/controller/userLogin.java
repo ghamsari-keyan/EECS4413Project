@@ -70,6 +70,7 @@ public class userLogin extends HttpServlet {
 
 			switch(action) {
 			case "login":
+        		getCustomerList(request, response);
 				String username = request.getParameter("username");
 				String password = request.getParameter("password");
 				sesh.setAttribute("name", username);
@@ -80,5 +81,17 @@ public class userLogin extends HttpServlet {
 
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
+	}
+
+	private void getCustomerList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		try {
+			List<Customer> customers = customerDAO.getCustomerList();
+
+			request.setAttribute("customers", customers);
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 }
